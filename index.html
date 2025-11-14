@@ -242,6 +242,28 @@
         const next = current === 'light' ? 'dark' : 'light';
         applyTheme(next);
       });
+
+    // ========== Menu burger ==========
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = document.body.classList.toggle('nav-open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        navToggle.textContent = isOpen ? '✕' : '☰';
+      });
+
+      // Quand on clique sur un lien, on referme le menu
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          document.body.classList.remove('nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.textContent = '☰';
+        });
+      });
+    }
+      
     })();
   </script>
 </body>
