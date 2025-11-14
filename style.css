@@ -152,6 +152,11 @@ html[data-theme="dark"] .theme-toggle {
 /* =========
    HERO à la Daikin
    ========= */
+/* Wrapper spécifique au hero : pleine largeur */
+.hero > .wrapper {
+  max-width: 100%;
+  padding: 0 24px;
+}
 
 .hero {
   position: relative;
@@ -186,7 +191,7 @@ html[data-theme="dark"] .theme-toggle {
 }
 
 .hero-content {
-  max-width: 1200px;            /* largeur confortable */
+  max-width: 100%;      /* ➜ on enlève la contrainte */
   width: 100%;
   color: #f9fafb;
   text-align: center;
