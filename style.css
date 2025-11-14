@@ -184,7 +184,8 @@ html[data-theme="dark"] .theme-toggle {
 }
 
 .hero-content {
-  max-width: 520px;
+  max-width: 900px;   /* plus large */
+  width: 100%;        /* prend toute la largeur possible */
   color: #f9fafb;
   animation: heroFadeUp 0.8s ease-out both;
 }
@@ -202,9 +203,9 @@ html[data-theme="dark"] .theme-toggle {
 }
 
 .hero-title-main {
-  font-size: clamp(32px, 3.4vw, 44px);
-  line-height: 1.15;
-  margin: 18px 0 12px;
+  font-size: clamp(38px, 4.4vw, 60px);  /* plus gros */
+  line-height: 1.1;
+  margin: 18px 0 14px;
 }
 
 .hero-lead {
