@@ -4,7 +4,7 @@
 :root {
   /* Hauteur du hero */
   --hero-height-desktop: 95vh;  /* PC */
-  --hero-height-mobile: 20vh;  /* Mobile */
+  --hero-height-mobile: 70vh;  /* Mobile */
 
   /* Taille du titre */
   --hero-title-desktop: clamp(40px, 4.8vw, 64px);
@@ -286,11 +286,11 @@ html[data-theme="dark"] .theme-toggle {
 /* Mobile : texte centré, plus compact */
 @media (max-width: 768px) {
   .hero {
-    min-height: var(--hero-height-mobile);
+    height: var(--hero-height-mobile);   /* on force la hauteur */
   }
 
   .hero-wrapper {
-    padding: 70px 14px 35px;  /* moins de marge haut/bas */
+    padding: 70px 14px 35px;
     align-items: flex-start;
   }
 
