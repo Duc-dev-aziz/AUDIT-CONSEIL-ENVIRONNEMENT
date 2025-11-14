@@ -78,6 +78,7 @@ html[data-theme="dark"] header {
   justify-content: space-between;
   gap: 24px;
   padding: 14px 16px;
+  position: relative;      /* ⬅ pour pouvoir placer burger + lune en absolu */
 }
 
 .brand {
@@ -168,17 +169,45 @@ html[data-theme="dark"] .theme-toggle {
   display: none;
   border: none;
   background: transparent;
-  font-size: 22px;
+  font-size: 26px;      /* ➜ burger plus gros */
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 6px 10px;    /* un peu plus de zone cliquable */
+  line-height: 1;
 }
 
-/* Mobile : on affiche le burger, on masque le menu tant qu'il n'est pas ouvert */
+/* Mobile : menu burger + logo centré */
 @media (max-width: 768px) {
   .navbar {
     position: relative;
+    justify-content: center;  /* logo au centre */
+    gap: 0;
   }
 
+  .brand {
+    flex: 0 1 auto;
+    text-align: center;
+  }
+
+  /* Burger à gauche */
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Lune à droite */
+  .theme-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Menu déroulant */
   .nav-links {
     position: absolute;
     top: 100%;
@@ -200,16 +229,6 @@ html[data-theme="dark"] .theme-toggle {
   /* quand le menu est ouvert */
   body.nav-open .nav-links {
     display: flex;
-  }
-
-  .nav-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .navbar {
-    gap: 12px;
   }
 }
 
