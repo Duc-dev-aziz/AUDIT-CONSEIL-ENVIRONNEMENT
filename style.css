@@ -169,10 +169,23 @@ html[data-theme="dark"] .theme-toggle {
   display: none;
   border: none;
   background: transparent;
-  font-size: 26px;          /* ➜ plus grand */
+  font-size: 28px !important;   /* plus gros, prioritaire */
   cursor: pointer;
   padding: 4px 10px;
   border-radius: 999px;
+}
+
+/* Dégradé sur le burger en thème clair */
+html[data-theme="light"] .nav-toggle {
+  background: linear-gradient(90deg, #0284c7, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Bleu plus vif en thème sombre */
+html[data-theme="dark"] .nav-toggle {
+  color: #38bdf8;
 }
 
 /* Couleur burger en clair = dégradé texte */
@@ -222,18 +235,18 @@ html[data-theme="dark"] .nav-toggle {
   }
 
   /* Menu déroulant */
-    .nav-links {
+      .nav-links {
     position: absolute;
     top: 100%;
     right: 0;
     left: 0;
-    padding: 16px 20px 20px;  /* ➜ plus d’espace autour */
+    padding: 18px 22px 22px;  /* plus d’air */
     display: none;
     flex-direction: column;
-    gap: 14px;                /* ➜ plus d’air entre les lignes */
+    gap: 16px;                /* espacement entre lignes */
     background: rgba(245, 247, 251, 0.98);
     border-bottom: 1px solid #e5e7eb;
-    font-size: 16px;          /* ➜ texte plus gros */
+    font-size: 17px !important;  /* texte plus gros */
   }
 
   html[data-theme="dark"] .nav-links {
