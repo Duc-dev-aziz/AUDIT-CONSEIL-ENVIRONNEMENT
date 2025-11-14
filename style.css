@@ -149,65 +149,121 @@ html[data-theme="dark"] .theme-toggle {
 }
 
 /* =========
-   Hero
+   HERO à la Daikin
    ========= */
+
 .hero {
-  padding-top: 110px;          /* pour laisser respirer sous le header */
-  padding-bottom: 100px;
+  position: relative;
+  min-height: 80vh;             /* grosse hauteur comme Daikin */
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
 }
 
-html[data-theme="light"] .hero {
-  background: radial-gradient(circle at 0 0, #e0f2fe, #f5f7fb 40%, #eef2ff 100%);
+/* Image de fond + overlay */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15)),
+    url("assets/hero-clim.jpg");   /* ➜ mets ici ta vraie image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
-html[data-theme="dark"] .hero {
-  background: radial-gradient(circle at 0 0, #0f172a, #020617 55%, #020617 100%);
-}
-
-.hero .wrapper {
-  min-height: calc(100vh - 80px); /* hero = quasiment tout l’écran */
+/* Contenu par-dessus l'image */
+.hero-wrapper {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
+  padding: 80px 16px;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: 40px;
+.hero-content {
+  max-width: 520px;
+  color: #f9fafb;
 }
 
-.hero-badge {
+.hero-kicker {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 5px 11px;
+  padding: 6px 12px;
   border-radius: 999px;
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  background: rgba(15, 23, 42, 0.7);
 }
 
-html[data-theme="light"] .hero-badge {
-  background: rgba(15, 23, 42, 0.06);
-  color: #0f172a;
-}
-
-html[data-theme="dark"] .hero-badge {
-  background: rgba(15, 23, 42, 0.85);
-  color: #e5edff;
-}
-
-.hero-title {
-  font-size: clamp(30px, 3.2vw, 40px);
-  line-height: 1.2;
+.hero-title-main {
+  font-size: clamp(32px, 3.4vw, 44px);
+  line-height: 1.15;
   margin: 18px 0 12px;
 }
 
-.hero-text {
-  max-width: 520px;
-  margin: 0 0 12px;
+.hero-lead {
+  margin: 0 0 18px;
+  font-size: 15px;
+  max-width: 480px;
   opacity: 0.9;
 }
+
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.hero-sub {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* Bouton secondaire (type contour blanc) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(248, 250, 252, 0.85);
+  background: transparent;
+  color: #f9fafb;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background: rgba(15, 23, 42, 0.35);
+}
+
+/* Mobile : texte centré, plus compact */
+@media (max-width: 768px) {
+  .hero-wrapper {
+    justify-content: center;
+    text-align: left;
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-cta-row {
+    justify-content: flex-start;
+  }
+}
+
+
 
 /* =========
    Boutons
