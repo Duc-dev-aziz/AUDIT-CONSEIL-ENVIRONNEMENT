@@ -165,10 +165,11 @@ html[data-theme="dark"] .theme-toggle {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15)),
-    url("assets/hero-clim.jpg");   /* ➜ mets ici ta vraie image */
+    /* overlay un peu plus sombre */
+    linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25)),
+    url("assets/hero-clim.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   z-index: 0;
 }
@@ -185,6 +186,7 @@ html[data-theme="dark"] .theme-toggle {
 .hero-content {
   max-width: 520px;
   color: #f9fafb;
+  animation: heroFadeUp 0.8s ease-out both;
 }
 
 .hero-kicker {
@@ -223,6 +225,18 @@ html[data-theme="dark"] .theme-toggle {
   font-size: 13px;
   opacity: 0.9;
 }
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* Bouton secondaire (type contour blanc) */
 .btn-secondary {
