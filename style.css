@@ -286,7 +286,7 @@ html[data-theme="dark"] .theme-toggle {
 /* Mobile : texte centré, plus compact */
 @media (max-width: 768px) {
   .hero {
-    height: var(--hero-height-mobile);   /* on force la hauteur */
+    min-height: var(--hero-height-mobile);   /* ✅ nouveau */
   }
 
   .hero-wrapper {
