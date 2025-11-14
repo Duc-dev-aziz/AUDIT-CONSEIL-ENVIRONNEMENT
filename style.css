@@ -185,11 +185,11 @@ html[data-theme="dark"] .theme-toggle {
 }
 
 .hero-content {
-  max-width: 900px;
+  max-width: 1100px;      /* ➜ plus large, presque toute la zone */
   width: 100%;
   color: #f9fafb;
-  text-align: center;                 /* ➜ texte centré */
-  margin: 0 auto;                     /* ➜ bloc centré */
+  text-align: center;
+  margin: 0 auto;
   animation: heroFadeUp 0.8s ease-out both;
 }
 
@@ -206,16 +206,18 @@ html[data-theme="dark"] .theme-toggle {
 }
 
 .hero-title-main {
-  font-size: clamp(42px, 5vw, 68px);  /* plus gros */
+  font-size: clamp(42px, 5vw, 68px);
   line-height: 1.08;
-  margin: 20px 0 16px;
+  margin: 20px auto 16px;   /* auto = centré */
+  max-width: 1100px;        /* même largeur que le bloc */
 }
 
 .hero-lead {
-  margin: 0 0 18px;
+  margin: 0 auto 18px;      /* auto ➜ centré */
   font-size: 15px;
-  max-width: 480px;
+  max-width: 700px;         /* un peu plus étroit pour la lisibilité */
   opacity: 0.9;
+  text-align: center;
 }
 
 .hero-cta-row {
