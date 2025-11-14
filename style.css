@@ -226,7 +226,7 @@ html[data-theme="dark"] .theme-toggle {
   font-size: var(--hero-title-desktop);
   line-height: 1.08;
   margin: 20px auto 18px;
-  max-width: 1200px;
+  max-width: 1400px;
 }
 
 .hero-lead {
