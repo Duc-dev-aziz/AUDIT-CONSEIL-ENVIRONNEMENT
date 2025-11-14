@@ -3,8 +3,8 @@
    ========= */
 :root {
   /* Hauteur du hero */
-  --hero-height-desktop: 90vh;  /* PC */
-  --hero-height-mobile: 40vh;  /* Mobile */
+  --hero-height-desktop: 95vh;  /* PC */
+  --hero-height-mobile: 20vh;  /* Mobile */
 
   /* Taille du titre */
   --hero-title-desktop: clamp(40px, 4.8vw, 64px);
