@@ -180,13 +180,16 @@ html[data-theme="dark"] .theme-toggle {
   z-index: 1;
   display: flex;
   align-items: center;
+  justify-content: center;   /* ➜ centre horizontalement */
   padding: 80px 16px;
 }
 
 .hero-content {
-  max-width: 900px;   /* plus large */
-  width: 100%;        /* prend toute la largeur possible */
+  max-width: 900px;
+  width: 100%;
   color: #f9fafb;
+  text-align: center;                 /* ➜ texte centré */
+  margin: 0 auto;                     /* ➜ bloc centré */
   animation: heroFadeUp 0.8s ease-out both;
 }
 
@@ -203,9 +206,9 @@ html[data-theme="dark"] .theme-toggle {
 }
 
 .hero-title-main {
-  font-size: clamp(38px, 4.4vw, 60px);  /* plus gros */
-  line-height: 1.1;
-  margin: 18px 0 14px;
+  font-size: clamp(42px, 5vw, 68px);  /* plus gros */
+  line-height: 1.08;
+  margin: 20px 0 16px;
 }
 
 .hero-lead {
@@ -219,6 +222,7 @@ html[data-theme="dark"] .theme-toggle {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  justify-content: center;   /* ➜ boutons centrés */
   margin-bottom: 12px;
 }
 
