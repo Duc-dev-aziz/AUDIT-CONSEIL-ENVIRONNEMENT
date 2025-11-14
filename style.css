@@ -1,6 +1,16 @@
 /* =========
    Base
    ========= */
+:root {
+  /* Hauteur du hero */
+  --hero-height-desktop: 80vh;  /* PC */
+  --hero-height-mobile: 100vh;  /* Mobile */
+
+  /* Taille du titre */
+  --hero-title-desktop: clamp(40px, 4.8vw, 64px);
+  --hero-title-mobile: clamp(26px, 7vw, 32px);
+}
+
 *,
 *::before,
 *::after {
@@ -160,11 +170,12 @@ html[data-theme="dark"] .theme-toggle {
 
 .hero {
   position: relative;
-  min-height: 80vh;             /* grosse hauteur comme Daikin */
+  min-height: var(--hero-height-desktop);
   display: flex;
   align-items: stretch;
   overflow: hidden;
 }
+
 
 /* Image de fond + overlay */
 .hero-bg {
@@ -212,7 +223,7 @@ html[data-theme="dark"] .theme-toggle {
 }
 
 .hero-title-main {
-  font-size: clamp(36px, 3.6vw, 50px);
+  font-size: var(--hero-title-desktop);
   line-height: 1.08;
   margin: 20px auto 18px;
   max-width: 1200px;
@@ -274,8 +285,8 @@ html[data-theme="dark"] .theme-toggle {
 
 /* Mobile : texte centré, plus compact */
 @media (max-width: 768px) {
-  .hero {
-    min-height: 100vh;
+    .hero {
+    min-height: var(--hero-height-mobile);
   }
 
   .hero-wrapper {
@@ -288,8 +299,8 @@ html[data-theme="dark"] .theme-toggle {
     padding: 0 10px;
   }
 
-  .hero-title-main {
-    font-size: clamp(26px, 7vw, 32px);
+   .hero-title-main {
+    font-size: var(--hero-title-mobile);
     line-height: 1.1;
   }
 
