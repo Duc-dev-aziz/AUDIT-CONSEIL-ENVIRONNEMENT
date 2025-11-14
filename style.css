@@ -160,6 +160,61 @@ html[data-theme="dark"] .theme-toggle {
 }
 
 /* =========
+   Menu burger
+   ========= */
+
+/* Bouton burger caché par défaut (desktop) */
+.nav-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* Mobile : on affiche le burger, on masque le menu tant qu'il n'est pas ouvert */
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    padding: 10px 16px 16px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(245, 247, 251, 0.98);
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  html[data-theme="dark"] .nav-links {
+    background: rgba(5, 8, 22, 0.98);
+    border-bottom-color: rgba(55, 65, 81, 0.8);
+  }
+
+  /* quand le menu est ouvert */
+  body.nav-open .nav-links {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar {
+    gap: 12px;
+  }
+}
+
+
+/* =========
    HERO à la Daikin
    ========= */
 /* Wrapper spécifique au hero : pleine largeur */
