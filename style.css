@@ -187,7 +187,7 @@ html[data-theme="dark"] .theme-toggle {
   display: flex;
   align-items: flex-start;      /* on colle le texte plus haut */
   justify-content: center;
-  padding: 110px 16px 80px;     /* top plus grand = bloc remonté */
+   padding: 70px 16px 60px;     /* top plus grand = bloc remonté */
 }
 
 .hero-content {
@@ -212,7 +212,7 @@ html[data-theme="dark"] .theme-toggle {
 }
 
 .hero-title-main {
-  font-size: clamp(40px, 4.8vw, 64px);
+  font-size: clamp(36px, 3.6vw, 50px);
   line-height: 1.08;
   margin: 20px auto 18px;
   max-width: 1200px;
@@ -433,4 +433,19 @@ footer {
   padding: 22px 10px 26px;
   opacity: 0.8;
   border-top: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px 16px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-size: 13px;
+    gap: 10px 14px;
+  }
 }
