@@ -670,8 +670,8 @@ html[data-theme="dark"] .logo-strip {
 @media (min-width: 1024px) {
   .logo-row {
     flex-wrap: nowrap;           /* interdit de passer à la ligne */
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
+gap: 40px;   /* tu ajustes l’espace entre logos comme tu veux */
   }
 
   .logo-row img {
