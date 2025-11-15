@@ -670,12 +670,13 @@ html[data-theme="dark"] .logo-strip {
 @media (min-width: 1024px) {
   .logo-row {
     flex-wrap: nowrap;           /* interdit de passer à la ligne */
-    justify-content: center;
-gap: 40px;   /* tu ajustes l’espace entre logos comme tu veux */
+    justify-content: center;     /* CENTRAGE */
+    gap: 40px;                   /* espace entre logos */
   }
 
   .logo-row img {
-    height: 70px;                /* petite hauteur pour caser 10 logos */
+    height: 28px;
     max-width: 110px;
   }
 }
+
