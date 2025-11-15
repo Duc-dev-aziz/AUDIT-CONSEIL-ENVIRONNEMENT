@@ -616,21 +616,13 @@ html[data-theme="dark"] .page-card {
   min-height: 65vh;
 }
 
+
 /* ===== BANDEAU LOGOS – PARTENAIRES ===== */
 .logo-strip {
-  padding: 32px 0 28px;
+  padding: 30px 0 26px;
   border-top: 1px solid rgba(148, 163, 184, 0.35);
   border-bottom: 1px solid rgba(148, 163, 184, 0.35);
 }
-
-/* Forcer la taille des logos */
-.logo-item img {
-  height: 80px;         /* Ajuste ici : 60 / 80 / 100 px selon ce que tu veux */
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
-
 
 html[data-theme="light"] .logo-strip {
   background: #f9fafb;
@@ -641,9 +633,9 @@ html[data-theme="dark"] .logo-strip {
 }
 
 .logo-strip-inner {
-  max-width: 1100px;
+  max-width: 1200px;      /* bandeau large */
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 32px;        /* tu peux monter à 40 si tu veux plus d’air */
 }
 
 /* Titre au-dessus des logos */
@@ -652,44 +644,36 @@ html[data-theme="dark"] .logo-strip {
   font-size: 13px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   opacity: 0.75;
 }
 
-/* Grille de logos fixes */
+/* Grille de logos – mobile d’abord */
 .logo-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;               /* ok de passer en 2 lignes sur mobile */
   justify-content: center;
   align-items: center;
-  gap: 24px 40px; /* ligne x colonne */
+  gap: 18px 26px;
 }
 
 .logo-row img {
-  height: 32px;
-  max-width: 140px;
+  height: 26px;
+  max-width: 120px;
   object-fit: contain;
   display: block;
 }
 
-/* Mobile : un peu plus compact */
-@media (max-width: 768px) {
-  .logo-strip {
-    padding: 24px 0 22px;
-  }
-
-  .logo-strip-title {
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    margin-bottom: 16px;
-  }
-
+/* Desktop : tout sur UNE ligne */
+@media (min-width: 1024px) {
   .logo-row {
-    gap: 18px 26px;
+    flex-wrap: nowrap;           /* interdit de passer à la ligne */
+    justify-content: space-between;
+    gap: 18px;
   }
 
   .logo-row img {
-    height: 26px;
+    height: 28px;                /* petite hauteur pour caser 10 logos */
     max-width: 110px;
   }
 }
