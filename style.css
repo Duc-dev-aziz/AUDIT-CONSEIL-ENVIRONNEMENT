@@ -650,7 +650,7 @@ html[data-theme="dark"] .partner-logo {
 .hero-services-bg {
   background-image:
     linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.25)),
-    url("assets/hero-services.jpg"); /* tu changeras le nom si besoin */
+    url("assets/Services 1.jpeg"); /* tu changeras le nom si besoin */
 }
 
 /* Option : image dédiée pour services */
