@@ -4,7 +4,7 @@
 :root {
   /* Hauteur du hero */
   --hero-height-desktop: 95vh;  /* PC */
-  --hero-height-mobile: 40vh;  /* Mobile */
+  --hero-height-mobile: 60vh;   /* Mobile, tu pourras jouer avec */
 
   /* Taille du titre */
   --hero-title-desktop: clamp(40px, 4.8vw, 64px);
@@ -26,7 +26,7 @@ html[data-theme="dark"] body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
-  overflow-x: hidden;   /* ➜ cette ligne en plus */
+  overflow-x: hidden;
 }
 
 /* Thème clair */
@@ -49,7 +49,7 @@ html[data-theme="dark"] body {
 }
 
 section {
-  padding: 80px 0; /* plus d’air entre les blocs */
+  padding: 80px 0;
 }
 
 /* =========
@@ -78,7 +78,7 @@ html[data-theme="dark"] header {
   justify-content: space-between;
   gap: 24px;
   padding: 14px 16px;
-  position: relative;      /* ⬅ pour pouvoir placer burger + lune en absolu */
+  position: relative;
 }
 
 .brand {
@@ -98,7 +98,7 @@ html[data-theme="dark"] header {
   background: radial-gradient(circle at 0% 0%, #facc15, #fb923c 40%, #0ea5e9 80%);
 }
 
-/* Menu */
+/* Menu (desktop) */
 .nav-links {
   display: flex;
   gap: 18px;
@@ -161,21 +161,20 @@ html[data-theme="dark"] .theme-toggle {
 }
 
 /* =========
-   Menu burger
+   Menu burger (base)
    ========= */
 
-/* Bouton burger caché par défaut (desktop) */
 .nav-toggle {
-  display: none;
+  display: none;              /* caché sur desktop */
   border: none;
   background: transparent;
-  font-size: 28px !important;   /* plus gros, prioritaire */
+  font-size: 28px;
   cursor: pointer;
   padding: 4px 10px;
   border-radius: 999px;
 }
 
-/* Dégradé sur le burger en thème clair */
+/* Dégradé sur le burger en clair */
 html[data-theme="light"] .nav-toggle {
   background: linear-gradient(90deg, #0284c7, #f97316);
   -webkit-background-clip: text;
@@ -183,29 +182,16 @@ html[data-theme="light"] .nav-toggle {
   color: transparent;
 }
 
-/* Bleu plus vif en thème sombre */
+/* Bleu vif en sombre */
 html[data-theme="dark"] .nav-toggle {
   color: #38bdf8;
 }
 
-/* Couleur burger en clair = dégradé texte */
-html[data-theme="light"] .nav-toggle {
-  background: linear-gradient(90deg, #0284c7, #f97316);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;       /* pour voir le dégradé dans le caractère ☰ */
-}
-
-/* Couleur burger en sombre = bleu plus vif */
-html[data-theme="dark"] .nav-toggle {
-  color: #38bdf8;
-}
-
-
-/* Mobile : menu burger + logo centré */
+/* =========
+   Header & menu en mobile
+   ========= */
 @media (max-width: 768px) {
   .navbar {
-    position: relative;
     justify-content: center;  /* logo au centre */
     gap: 0;
   }
@@ -234,7 +220,7 @@ html[data-theme="dark"] .nav-toggle {
     transform: translateY(-50%);
   }
 
-    /* Menu déroulant (mobile) */
+  /* Menu déroulant (mobile) */
   .nav-links {
     position: absolute;
     top: calc(100% + 8px);   /* petit espace sous le header */
@@ -248,25 +234,28 @@ html[data-theme="dark"] .nav-toggle {
     background: rgba(245, 247, 251, 0.98);
     border-radius: 16px;
     box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
-    font-size: 20px;
+  }
+
+  .nav-links a {
+    font-size: 18px;          /* texte plus gros */
+    line-height: 1.4;
   }
 
   html[data-theme="dark"] .nav-links {
     background: rgba(5, 8, 22, 0.98);
-    border-radius: 16px;
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
-    border-bottom: none;
   }
 
   /* quand le menu est ouvert */
   body.nav-open .nav-links {
     display: flex;
   }
-
+}
 
 /* =========
    HERO à la Daikin
    ========= */
+
 /* Wrapper spécifique au hero : pleine largeur */
 .hero > .wrapper {
   max-width: 100%;
@@ -281,13 +270,11 @@ html[data-theme="dark"] .nav-toggle {
   overflow: hidden;
 }
 
-
 /* Image de fond + overlay */
 .hero-bg {
   position: absolute;
   inset: 0;
   background-image:
-    /* overlay un peu plus sombre */
     linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25)),
     url("assets/hero-clim.jpg");
   background-size: cover;
@@ -301,30 +288,18 @@ html[data-theme="dark"] .nav-toggle {
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: flex-start;      /* on colle le texte plus haut */
+  align-items: flex-start;      /* texte un peu plus haut */
   justify-content: center;
-   padding: 70px 16px 60px;     /* top plus grand = bloc remonté */
+  padding: 110px 16px 80px;
 }
 
 .hero-content {
-  max-width: 100%;      /* ➜ on enlève la contrainte */
+  max-width: 1200px;
   width: 100%;
   color: #f9fafb;
   text-align: center;
   margin: 0 auto;
   animation: heroFadeUp 0.8s ease-out both;
-}
-
-.hero-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: rgba(15, 23, 42, 0.7);
 }
 
 .hero-title-main {
@@ -345,7 +320,7 @@ html[data-theme="dark"] .nav-toggle {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;     /* boutons centrés */
+  justify-content: center;
   margin-bottom: 12px;
 }
 
@@ -366,8 +341,7 @@ html[data-theme="dark"] .nav-toggle {
   }
 }
 
-
-/* Bouton secondaire (type contour blanc) */
+/* Bouton secondaire (contour blanc) */
 .btn-secondary {
   display: inline-flex;
   align-items: center;
@@ -388,14 +362,14 @@ html[data-theme="dark"] .nav-toggle {
   background: rgba(15, 23, 42, 0.35);
 }
 
-/* Mobile : texte centré, plus compact */
+/* HERO – Mobile */
 @media (max-width: 768px) {
   .hero {
-    min-height: var(--hero-height-mobile);   /* ✅ nouveau */
+    min-height: var(--hero-height-mobile);
   }
 
   .hero-wrapper {
-    padding: 20px 14px 20px;
+    padding: 60px 14px 40px; /* tu peux jouer sur ces valeurs pour remonter/descendre le bloc */
     align-items: flex-start;
   }
 
@@ -404,7 +378,7 @@ html[data-theme="dark"] .nav-toggle {
   }
 
   .hero-title-main {
-    font-size: clamp(24px, 6.5vw, 30px); /* un poil plus compact */
+    font-size: var(--hero-title-mobile);
     line-height: 1.05;
     margin-bottom: 14px;
   }
@@ -426,11 +400,8 @@ html[data-theme="dark"] .nav-toggle {
   }
 }
 
-
-
-
 /* =========
-   Boutons
+   Boutons (généraux)
    ========= */
 .btn,
 .btn-outline {
@@ -557,19 +528,4 @@ footer {
   padding: 22px 10px 26px;
   opacity: 0.8;
   border-top: 1px solid rgba(148, 163, 184, 0.35);
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 10px 16px;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    font-size: 13px;
-    gap: 10px 14px;
-  }
 }
