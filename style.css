@@ -4,7 +4,7 @@
 :root {
   /* Hauteur du hero */
   --hero-height-desktop: 95vh;  /* PC */
-  --hero-height-mobile: 60vh;   /* Mobile, tu pourras jouer avec */
+  --hero-height-mobile: 60vh;   /* Mobile */
 
   /* Taille du titre */
   --hero-title-desktop: clamp(40px, 4.8vw, 64px);
@@ -223,7 +223,7 @@ html[data-theme="dark"] .nav-toggle {
   /* Menu déroulant (mobile) */
   .nav-links {
     position: absolute;
-    top: calc(100% + 8px);   /* petit espace sous le header */
+    top: calc(100% + 8px);
     left: 12px;
     right: 12px;
     margin: 0 auto;
@@ -237,7 +237,7 @@ html[data-theme="dark"] .nav-toggle {
   }
 
   .nav-links a {
-    font-size: 18px;          /* texte plus gros */
+    font-size: 18px;
     line-height: 1.4;
   }
 
@@ -288,7 +288,7 @@ html[data-theme="dark"] .nav-toggle {
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: flex-start;      /* texte un peu plus haut */
+  align-items: flex-start;
   justify-content: center;
   padding: 110px 16px 80px;
 }
@@ -369,7 +369,7 @@ html[data-theme="dark"] .nav-toggle {
   }
 
   .hero-wrapper {
-    padding: 60px 14px 40px; /* tu peux jouer sur ces valeurs pour remonter/descendre le bloc */
+    padding: 60px 14px 40px;
     align-items: flex-start;
   }
 
@@ -533,7 +533,6 @@ footer {
 /* =========
    Pages internes
    ========= */
-
 .page-main {
   padding: 70px 0 90px;
 }
@@ -609,7 +608,7 @@ html[data-theme="dark"] .page-card {
 .hero-services-bg {
   background-image:
     linear-gradient(to right, rgba(0,0,0,0.55), rgba(0,0,0,0.25)),
-    url("assets/Services 1.jpeg"); /* tu changeras le nom si besoin */
+    url("assets/Services 1.jpeg");
 }
 
 /* Option : image dédiée pour services */
