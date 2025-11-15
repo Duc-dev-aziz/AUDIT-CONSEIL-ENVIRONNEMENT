@@ -654,13 +654,13 @@ html[data-theme="dark"] .logo-strip {
   flex-wrap: wrap;           /* plusieurs lignes sur mobile */
   justify-content: center;
   align-items: center;
-  gap: 14px 0;               /* moins d’espace horizontal, plus compact */
+  gap: 30px 0;               /* moins d’espace horizontal, plus compact */
 }
 
 .logo-row img {
   flex: 0 0 33.33%;          /* ≃ 3 logos par ligne */
   max-width: 33.33%;
-  height: 32px;              /* taille raisonnable sur mobile */
+  height: 50px;              /* taille raisonnable sur mobile */
   object-fit: contain;
   display: block;
 }
@@ -671,11 +671,11 @@ html[data-theme="dark"] .logo-strip {
   .logo-row {
     flex-wrap: nowrap;           /* interdit de passer à la ligne */
     justify-content: space-between;
-    gap: 18px;
+    gap: 30px;
   }
 
   .logo-row img {
-    height: 28px;                /* petite hauteur pour caser 10 logos */
+    height: 40px;                /* petite hauteur pour caser 10 logos */
     max-width: 110px;
   }
 }
