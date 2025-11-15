@@ -592,46 +592,86 @@ html[data-theme="dark"] .page-card {
   box-shadow: 0 22px 55px rgba(15, 23, 42, 0.12);
 }
 
-/* Bande fournisseurs / logos (pour plus tard sur Home ou pages) */
+/* Bande fournisseurs / logos – style type Klima */
 .partner-strip {
-  margin-top: 32px;
+  padding: 40px 0 50px; /* plus proche du hero, moins massif */
 }
 
+.partner-strip .wrapper {
+  text-align: center;
+}
+
+/* Titre avec traits gauche / droite */
 .partner-strip-title {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  opacity: 0.7;
-  margin-bottom: 14px;
-}
-
-.partner-logos {
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-flex;
+  align-items: center;
   gap: 18px;
-  align-items: center;
-}
-
-.partner-logo {
-  width: 120px;
-  height: 52px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
   opacity: 0.8;
 }
 
-html[data-theme="light"] .partner-logo {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+.partner-strip-title::before,
+.partner-strip-title::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 80px;
+  border-radius: 999px;
 }
 
-html[data-theme="dark"] .partner-logo {
-  background: #020617;
-  border: 1px solid #1f2937;
+html[data-theme="light"] .partner-strip-title::before,
+html[data-theme="light"] .partner-strip-title::after {
+  background: #d1d5db;
 }
+
+html[data-theme="dark"] .partner-strip-title::before,
+html[data-theme="dark"] .partner-strip-title::after {
+  background: #4b5563;
+}
+
+/* Logos en ligne, sans fond ni bordure */
+.partner-logos {
+  margin-top: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.partner-logo {
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0.9;
+  /* si plus tard tu mets des <img>, ça gardera l’alignement */
+}
+
+@media (max-width: 768px) {
+  .partner-strip {
+    padding: 28px 0 36px;
+  }
+
+  .partner-strip-title {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+  }
+
+  .partner-strip-title::before,
+  .partner-strip-title::after {
+    width: 50px;
+  }
+
+  .partner-logos {
+    gap: 24px;
+  }
+
+  .partner-logo {
+    font-size: 16px;
+  }
+}
+
 
 /* Mobile : on resserre un peu */
 @media (max-width: 768px) {
