@@ -623,6 +623,15 @@ html[data-theme="dark"] .page-card {
   border-bottom: 1px solid rgba(148, 163, 184, 0.35);
 }
 
+/* Forcer la taille des logos */
+.logo-item img {
+  height: 80px;         /* Ajuste ici : 60 / 80 / 100 px selon ce que tu veux */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
 html[data-theme="light"] .logo-strip {
   background: #f9fafb;
 }
