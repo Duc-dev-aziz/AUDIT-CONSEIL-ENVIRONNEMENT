@@ -616,12 +616,11 @@ html[data-theme="dark"] .page-card {
   min-height: 65vh;
 }
 
-/* ===== BANDEAU LOGOS – MARQUEE ===== */
+/* ===== BANDEAU LOGOS – PARTENAIRES ===== */
 .logo-strip {
-  padding: 20px 0;
+  padding: 32px 0 28px;
   border-top: 1px solid rgba(148, 163, 184, 0.35);
   border-bottom: 1px solid rgba(148, 163, 184, 0.35);
-  overflow: hidden;
 }
 
 html[data-theme="light"] .logo-strip {
@@ -638,43 +637,50 @@ html[data-theme="dark"] .logo-strip {
   padding: 0 16px;
 }
 
-.logo-track {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-  width: max-content;
-  animation: logoScroll 25s linear infinite;
+/* Titre au-dessus des logos */
+.logo-strip-title {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  opacity: 0.75;
 }
 
-.logo-item img {
-  height: 36px;
-  width: auto;
+/* Grille de logos fixes */
+.logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px 40px; /* ligne x colonne */
+}
+
+.logo-row img {
+  height: 32px;
+  max-width: 140px;
   object-fit: contain;
   display: block;
-}
-
-/* Animation défilement horizontale */
-@keyframes logoScroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 /* Mobile : un peu plus compact */
 @media (max-width: 768px) {
   .logo-strip {
-    padding: 16px 0;
+    padding: 24px 0 22px;
   }
 
-  .logo-track {
-    gap: 40px;
-    animation-duration: 20s;
+  .logo-strip-title {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    margin-bottom: 16px;
   }
 
-  .logo-item img {
-    height: 28px;
+  .logo-row {
+    gap: 18px 26px;
+  }
+
+  .logo-row img {
+    height: 26px;
+    max-width: 110px;
   }
 }
