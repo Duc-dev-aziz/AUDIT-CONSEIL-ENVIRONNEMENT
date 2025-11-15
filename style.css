@@ -651,18 +651,20 @@ html[data-theme="dark"] .logo-strip {
 /* Grille de logos – mobile d’abord */
 .logo-row {
   display: flex;
-  flex-wrap: wrap;               /* ok de passer en 2 lignes sur mobile */
+  flex-wrap: wrap;           /* plusieurs lignes sur mobile */
   justify-content: center;
   align-items: center;
-  gap: 18px 26px;
+  gap: 14px 0;               /* moins d’espace horizontal, plus compact */
 }
 
 .logo-row img {
-  height: 60px;
-  max-width: 120px;
+  flex: 0 0 33.33%;          /* ≃ 3 logos par ligne */
+  max-width: 33.33%;
+  height: 32px;              /* taille raisonnable sur mobile */
   object-fit: contain;
   display: block;
 }
+
 
 /* Desktop : tout sur UNE ligne */
 @media (min-width: 1024px) {
