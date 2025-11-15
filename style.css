@@ -658,7 +658,7 @@ html[data-theme="dark"] .logo-strip {
 }
 
 .logo-row img {
-  height: 26px;
+  height: 32px;
   max-width: 120px;
   object-fit: contain;
   display: block;
