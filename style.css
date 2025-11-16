@@ -896,3 +896,147 @@ html[data-theme="dark"] .page-services .sticky-title-line {
     0 0 0 1px rgba(255, 123, 50, 0.18);
   transition: all 0.2s ease;
 }
+
+
+/* =====================================================
+   PAGE CONTACT / DEMANDE DE DEVIS
+   ===================================================== */
+
+.page-contact .page-section {
+  padding: 40px 0 60px;
+}
+
+/* Carte du formulaire */
+.contact-form-card {
+  max-width: 980px;
+  margin: 0 auto 40px;
+  padding: 32px 28px 40px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow:
+    0 22px 60px rgba(15, 23, 42, 0.16),
+    0 0 0 1px rgba(148, 163, 184, 0.18);
+}
+
+html[data-theme="dark"] .contact-form-card {
+  background: #020617;
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(30, 64, 175, 0.45);
+}
+
+.contact-form-title {
+  font-size: 26px;
+  margin: 0 0 6px;
+}
+
+.contact-form-subtitle {
+  font-size: 20px;
+  margin: 28px 0 10px;
+}
+
+.contact-form-intro {
+  margin: 0 0 20px;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.required {
+  color: #ff7b32;
+}
+
+/* Grille du formulaire */
+.ace-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.ace-field-full {
+  grid-column: 1 / -1;
+}
+
+/* Champs */
+.ace-field label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.ace-field input,
+.ace-field select,
+.ace-field textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  padding: 10px 12px;
+  font: inherit;
+  background: #f9fafb;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+html[data-theme="dark"] .ace-field input,
+html[data-theme="dark"] .ace-field select,
+html[data-theme="dark"] .ace-field textarea {
+  background: #020617;
+  border-color: rgba(148, 163, 184, 0.7);
+  color: #e5e7eb;
+}
+
+.ace-field textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.ace-field input:focus,
+.ace-field select:focus,
+.ace-field textarea:focus {
+  outline: none;
+  border-color: #1e90ff;
+  box-shadow:
+    0 0 0 1px rgba(30, 144, 255, 0.5),
+    0 0 0 4px rgba(30, 144, 255, 0.12);
+  background: #ffffff;
+}
+
+html[data-theme="dark"] .ace-field input:focus,
+html[data-theme="dark"] .ace-field select:focus,
+html[data-theme="dark"] .ace-field textarea:focus {
+  background: #020617;
+}
+
+/* Petit texte d’aide */
+.ace-help {
+  margin-top: 4px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Texte légal + bouton */
+.ace-legal {
+  font-size: 12px;
+  opacity: 0.8;
+  margin: 10px 0 18px;
+}
+
+.ace-actions {
+  text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-form-card {
+    padding: 24px 20px 30px;
+    border-radius: 18px;
+  }
+
+  .ace-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-title {
+    font-size: 22px;
+  }
+}
