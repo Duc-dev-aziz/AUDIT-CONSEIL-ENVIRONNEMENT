@@ -537,6 +537,11 @@ footer {
   padding: 70px 0 90px;
 }
 
+/* Page Services : supprimer l'espace au-dessus du hero */
+.page-services .page-main {
+  padding-top: 0;
+}
+
 .page-header {
   margin-bottom: 32px;
 }
