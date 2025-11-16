@@ -87,6 +87,12 @@
   </div>
 </section>
 
+    <!-- BLOC PILE DE TITRES (fixe sous le header) -->
+<div class="services-titles-stack">
+  <div class="wrapper">
+    <div class="services-titles-list" id="servicesTitlesList"></div>
+  </div>
+</div>
     
 <main class="page-main">
   <div class="wrapper">
@@ -280,5 +286,44 @@
       </div>
     </section>
 
-  </div>
+    </div>
 </main>
+
+<script>
+  (function () {
+    const list = document.getElementById('servicesTitlesList');
+    if (!list) return;
+
+    const ids = ['cycle-vie', 'installation', 'maintenance', 'depannage', 'pourquoi-nous'];
+    const seen = new Set();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        const id = entry.target.id;
+        if (!ids.includes(id) || seen.has(id)) return;
+
+        seen.add(id);
+
+        const h2 = entry.target.querySelector('h2');
+        if (!h2) return;
+
+        const item = document.createElement('div');
+        item.className = 'services-titles-item';
+        item.textContent = h2.textContent.trim();
+        list.appendChild(item);
+      });
+    }, {
+      threshold: 0.4
+    });
+
+    ids.forEach(id => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+  })();
+</script>
+
+</body>
+</html>
