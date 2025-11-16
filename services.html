@@ -87,10 +87,24 @@
   </div>
 </section>
 
+    <!-- BANDEAU ÉTAPES STICKY -->
+<section class="steps-bar">
+  <div class="wrapper steps-bar-inner">
+    <p class="steps-title">Parcours de votre projet</p>
+    <ol class="steps-list">
+      <li data-step="cycle-vie">1. Un accompagnement complet, étape par étape</li>
+      <li data-step="installation">2. Installation & mise en service certifiées</li>
+      <li data-step="maintenance">3. Contrats d’entretien & maintenance préventive</li>
+      <li data-step="depannage">4. Dépannage & service après-vente</li>
+      <li data-step="pourquoi-nous">5. Pourquoi nous faire confiance ?</li>
+    </ol>
+  </div>
+</section>
+
+
+    
 <main class="page-main">
   <div class="wrapper">
-
-  
 
     <!-- 1. ACCOMPAGNEMENT GLOBAL -->
     <section class="page-section" id="cycle-vie">
@@ -283,3 +297,39 @@
 
   </div>
 </main>
+
+    <script>
+  (function () {
+    const stepItems = document.querySelectorAll('.steps-list li');
+    if (!stepItems.length) return;
+
+    const map = {};
+    stepItems.forEach(li => {
+      const id = li.dataset.step;
+      if (id) map[id] = li;
+    });
+
+    const sectionIds = ['cycle-vie', 'installation', 'maintenance', 'depannage', 'pourquoi-nous'];
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        const li = map[id];
+        if (!li) return;
+        li.classList.add('is-active');
+      });
+    }, {
+      threshold: 0.4
+    });
+
+    sectionIds.forEach(id => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+
+    // au cas où : on marque la première étape active dès le départ
+    const first = map['cycle-vie'];
+    if (first) first.classList.add('is-active');
+  })();
+</script>
