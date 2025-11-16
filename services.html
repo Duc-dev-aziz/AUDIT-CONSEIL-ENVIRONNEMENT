@@ -298,7 +298,7 @@
     const titles = Array.from(document.querySelectorAll('.page-section h2'));
     if (!titles.length) return;
 
-    // Conteneur sticky en haut de la page
+    // Conteneur sticky pour la pile de titres
     const sticky = document.createElement('div');
     sticky.className = 'sticky-titles';
 
@@ -306,10 +306,14 @@
     inner.className = 'sticky-titles-inner';
     sticky.appendChild(inner);
 
-    // On l'ajoute au <body>
-    document.body.appendChild(sticky);
+    // 👉 On l'insère JUSTE APRÈS le header, pas en bas de la page
+    if (header && header.parentNode) {
+      header.parentNode.insertBefore(sticky, header.nextSibling);
+    } else {
+      document.body.insertBefore(sticky, document.body.firstChild);
+    }
 
-    // Tableau pour mémoriser les lignes déjà créées
+    // Tableau qui mémorise les lignes déjà créées
     const lines = new Array(titles.length).fill(null);
 
     function onScroll() {
@@ -340,7 +344,7 @@
         }
       });
 
-      // On cache complètement le bloc sticky tant qu'il n'y a aucune ligne
+      // On masque complètement le bloc tant qu'il n'y a aucune ligne
       sticky.style.display = inner.children.length ? 'block' : 'none';
     }
 
