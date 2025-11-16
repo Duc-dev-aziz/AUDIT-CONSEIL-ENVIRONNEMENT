@@ -2,7 +2,7 @@
 <html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services – AUDIT CONSEIL ENVIRONNEMENT</title>
   <link rel="stylesheet" href="style.css?v=3">
   <link rel="icon" href="assets/favicon.png">
@@ -10,7 +10,7 @@
 </head>
 <body>
 
-  <!-- HEADER + MENU (même que sur la home) -->
+  <!-- HEADER (NE PAS TOUCHER) -->
   <header>
     <div class="wrapper navbar">
       <div class="brand">
@@ -18,14 +18,7 @@
         <span>AUDIT CONSEIL ENVIRONNEMENT</span>
       </div>
 
-      <!-- Bouton burger (mobile) -->
-      <button id="nav-toggle"
-              class="nav-toggle"
-              type="button"
-              aria-label="Ouvrir le menu"
-              aria-expanded="false">
-        ☰
-      </button>
+      <button id="nav-toggle" class="nav-toggle" type="button">☰</button>
 
       <nav class="nav-links">
         <a href="index.html#accueil">Accueil</a>
@@ -35,322 +28,223 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Changer le thème">☾</button>
+      <button id="theme-toggle" class="theme-toggle" type="button">☾</button>
     </div>
   </header>
 
-  <main>
+  <!-- UNIQUE MAIN -->
+  <main class="page-main">
 
-<!-- HERO SERVICES -->
-<section class="hero hero-services">
-  <div class="hero-bg hero-services-bg"></div>
+    <!-- HERO SERVICES (ON NE TOUCHE A RIEN) -->
+    <section class="hero hero-services">
+      <div class="hero-bg hero-services-bg"></div>
 
-  <div class="wrapper">
-    <div class="hero-wrapper">
-      <div class="hero-content">
-        <h1 class="hero-title-main">
-          Nos services en climatisation & pompes à chaleur
-        </h1>
+      <div class="wrapper">
+        <div class="hero-wrapper">
+          <div class="hero-content">
+            <h1 class="hero-title-main">
+              Nos services en climatisation & pompes à chaleur
+            </h1>
 
-        <p class="hero-lead">
-          Installations, études, dimensionnement, maintenance et dépannage.
-          AUDIT CONSEIL ENVIRONNEMENT vous accompagne sur tout le cycle de vie
-          de vos équipements.
-        </p>
+            <p class="hero-lead">
+              Installations, études, dimensionnement, maintenance et dépannage.
+              AUDIT CONSEIL ENVIRONNEMENT vous accompagne sur tout le cycle de vie
+              de vos équipements.
+            </p>
 
-        <div class="hero-cta-row">
-          <a href="contact.html" class="btn">Demander un devis</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BANDEAU PARTENAIRES -->
-<section class="logo-strip">
-  <div class="logo-strip-inner">
-
-    <p class="logo-strip-title">Nos partenaires historiques</p>
-
-    <div class="logo-row">
-  <img src="assets/logo-daikin.png" alt="Daikin">
-  <img src="assets/logo toshiba.png" alt="Toshiba">
-  <img src="assets/logo GE.png" alt="General Electric">
-  <img src="assets/logo Panasonic.png" alt="Panasonic">
-  <img src="assets/LG logo.png" alt="LG">
-  <img src="assets/Mitsubishi_Electric_logo.svg.png" alt="Mitsubishi Electric">
-  <img src="assets/atlantic_logo_garanka_.png" alt="Atlantic">
-  <img src="assets/technibel-climatisation-logo-1.jpg" alt="Technibel">
-  <img src="assets/Hitachi_logo.png" alt="Hitachi">
-  <img src="assets/Logo samsung - copie.png" alt="Samsung">
-</div>
-  </div>
-</section>
-
-    <!-- BLOC PILE DE TITRES (fixe sous le header) -->
-<div class="services-titles-stack">
-  <div class="wrapper">
-    <div class="services-titles-list" id="servicesTitlesList"></div>
-  </div>
-</div>
-    
-<main class="page-main">
-  <div class="wrapper">
-
-    <!-- 1. ACCOMPAGNEMENT GLOBAL -->
-    <section class="page-section" id="cycle-vie">
-  <h2 class="step-title step-1">Un accompagnement complet, étape par étape</h2>
-      <div class="page-grid">
-        <article class="page-card">
-          <figure style="margin:0 0 12px;">
-            <img src="assets/audit et etude.png" alt="Audit thermique et étude sur plan"
-                 style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;">
-          </figure>
-          <h3>Audit & étude thermique</h3>
-          <p>
-            Analyse de votre bâtiment, relevé des contraintes techniques et évaluation précise de vos besoins
-            en confort d’été comme d’hiver.
-          </p>
-        </article>
-
-        <article class="page-card">
-          <figure style="margin:0 0 12px;">
-            <img src="assets/Dimensionnement et préconisations.png" alt="Dimensionnement des équipements"
-                 style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;">
-          </figure>
-          <h3>Dimensionnement & préconisations</h3>
-          <p>
-            Choix des puissances, des emplacements et des technologies les plus adaptées (climatisation,
-            PAC air/air, PAC air/eau…) pour optimiser performance et consommation.
-          </p>
-        </article>
-
-        <article class="page-card">
-          <figure style="margin:0 0 12px;">
-            <img src="assets/Conseil et accompagnement.png" alt="Conseil et accompagnement"
-                 style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;">
-          </figure>
-          <h3>Conseil & accompagnement</h3>
-          <p>
-            Explication claire des solutions, simulations budgétaires et accompagnement dans vos démarches
-            (subventions, aides, travaux par étapes…).
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 2. INSTALLATION & MISE EN SERVICE -->
-    <section class="page-section" id="installation">
-  <h2 class="step-title step-2">Installation & mise en service certifiées</h2>
-      <div class="page-grid">
-        <article class="page-card">
-          <figure style="margin:0 0 12px;">
-            <img src="assets/Installation.png" alt="Installation d'une climatisation murale"
-                 style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;">
-          </figure>
-          <h3>Pose dans les règles de l’art</h3>
-          <p>
-            Intervention par des techniciens qualifiés, respect des notices fabricants et des exigences
-            réglementaires pour des installations durables et fiables.
-          </p>
-        </article>
-
-        <article class="page-card">
-          <figure style="margin:0 0 12px;">
-            <img src="assets/Mise en service.png" alt="Mise en service d'une pompe à chaleur"
-                 style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;">
-          </figure>
-          <h3>Réglages & mise en service</h3>
-          <p>
-            Vérification des performances, réglage des consignes, contrôle des fuites, équilibrage des
-            débits d’air pour un confort immédiat dès la mise en route.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 3. CONTRATS D’ENTRETIEN -->
-    <section class="page-section" id="maintenance">
-  <h2 class="step-title step-3">Contrats d’entretien & maintenance préventive</h2>
-      <div class="page-grid">
-        <article class="page-card">
-          <figure style="margin:0 0 12px;">
-            <img src="assets/entretien.png" alt="Entretien climatisation et pompe à chaleur"
-                 style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;">
-          </figure>
-          <h3>Visites annuelles obligatoires</h3>
-          <p>
-            Nettoyage, contrôle des organes de sécurité, vérification des performances et conseils
-            d’utilisation pour prolonger la durée de vie de vos appareils.
-          </p>
-        </article>
-
-        <article class="page-card">
-          <figure style="margin:0 0 12px;">
-            <img src="assets/Contrat de maintenance.png" alt="Contrat de maintenance"
-                 style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;">
-          </figure>
-          <h3>Contrats adaptés à vos besoins</h3>
-          <p>
-            Formules sur mesure pour les particuliers, les commerces et les bâtiments tertiaires,
-            avec engagement de délai d’intervention.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 4. DÉPANNAGE & SAV -->
-    <section class="page-section" id="depannage">
-  <h2 class="step-title step-4">Dépannage & service après-vente</h2>
-      <div class="page-grid">
-        <article class="page-card">
-          <figure style="margin:0 0 12px;">
-            <img src="assets/Dépannage.png" alt="Dépannage climatisation"
-                 style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;">
-          </figure>
-          <h3>Diagnostic rapide</h3>
-          <p>
-            Recherche de panne méthodique, explication claire des causes et des solutions possibles,
-            avec devis transparent avant toute réparation.
-          </p>
-        </article>
-
-        <article class="page-card">
-          <figure style="margin:0 0 12px;">
-            <img src="assets/SAV.png" alt="Service après-vente"
-                 style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;">
-          </figure>
-          <h3>SAV sur vos installations</h3>
-          <p>
-            Suivi de vos équipements dans le temps, remplacement de pièces d’usure et optimisation
-            des réglages en fonction de l’usage réel.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 5. POURQUOI NOUS CHOISIR ? -->
-    <section class="page-section" id="pourquoi-nous">
-  <h2 class="step-title step-5">Pourquoi faire confiance à AUDIT CONSEIL ENVIRONNEMENT ?</h2>
-      <div class="page-grid">
-        <article class="page-card">
-          <h3>Une expertise reconnue</h3>
-          <p>
-            Des années d’expérience dans la climatisation et les pompes à chaleur, avec un suivi
-            de projets résidentiels et tertiaires.
-          </p>
-        </article>
-
-        <article class="page-card">
-          <h3>Techniciens qualifiés</h3>
-          <p>
-            Équipes formées en continu aux nouvelles technologies et aux dernières exigences
-            réglementaires.
-          </p>
-        </article>
-
-        <article class="page-card">
-          <h3>Intervention locale</h3>
-          <p>
-            Proximité, réactivité et connaissance du terrain : nous intervenons dans votre secteur
-            avec des délais maîtrisés.
-          </p>
-        </article>
-
-        <article class="page-card">
-          <h3>Accompagnement sur la durée</h3>
-          <p>
-            De la première visite jusqu’à la maintenance, vous gardez un interlocuteur unique qui
-            connaît parfaitement votre installation.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 6. CTA FINAL -->
-    <section class="page-section" id="contact-devis">
-      <div class="contact-grid">
-        <div class="contact-box">
-          <h2>Parlons de votre projet</h2>
-          <p>
-            Vous avez un projet de climatisation, de rénovation énergétique ou de remplacement
-            d’équipement&nbsp;? Expliquez-nous votre besoin, nous revenons vers vous rapidement avec
-            une proposition adaptée.
-          </p>
-          <p class="contact-note">
-            Installation, remplacement, contrat d’entretien ou simple conseil : nous vous
-            accompagnons à chaque étape.
-          </p>
-          <a href="contact.html" class="btn">Demander un devis</a>
+            <div class="hero-cta-row">
+              <a href="contact.html" class="btn">Demander un devis</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    </div>
-</main>
+    <!-- BANDEAU PARTENAIRES (ON NE TOUCHE PAS) -->
+    <section class="logo-strip">
+      <div class="logo-strip-inner">
+        <p class="logo-strip-title">Nos partenaires historiques</p>
+        <div class="logo-row">
+          <img src="assets/logo-daikin.png" alt="Daikin">
+          <img src="assets/logo toshiba.png" alt="Toshiba">
+          <img src="assets/logo GE.png" alt="General Electric">
+          <img src="assets/logo Panasonic.png" alt="Panasonic">
+          <img src="assets/LG logo.png" alt="LG">
+          <img src="assets/Mitsubishi_Electric_logo.svg.png" alt="Mitsubishi Electric">
+          <img src="assets/atlantic_logo_garanka_.png" alt="Atlantic">
+          <img src="assets/technibel-climatisation-logo-1.jpg" alt="Technibel">
+          <img src="assets/Hitachi_logo.png" alt="Hitachi">
+          <img src="assets/Logo samsung - copie.png" alt="Samsung">
+        </div>
+      </div>
+    </section>
 
-<script>
+    <!-- NOUVELLE PILE STICKY (le conteneur fixe) -->
+    <div class="sticky-titles">
+      <div class="sticky-titles-inner"></div>
+    </div>
+
+    <!-- CONTENU DES SECTIONS -->
+    <div class="wrapper">
+
+      <!-- SECTION 1 -->
+      <section class="page-section" id="cycle-vie">
+        <h2 class="step-title step-1">Un accompagnement complet, étape par étape</h2>
+        <div class="page-grid">
+
+          <article class="page-card">
+            <figure><img src="assets/audit et etude.png" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;"></figure>
+            <h3>Audit & étude thermique</h3>
+            <p>Analyse de votre bâtiment, relevé des contraintes techniques et évaluation précise des besoins.</p>
+          </article>
+
+          <article class="page-card">
+            <figure><img src="assets/Dimensionnement et préconisations.png" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;"></figure>
+            <h3>Dimensionnement & préconisations</h3>
+            <p>Choix des puissances, emplacements et technologies pour optimiser performance et consommation.</p>
+          </article>
+
+          <article class="page-card">
+            <figure><img src="assets/Conseil et accompagnement.png" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;"></figure>
+            <h3>Conseil & accompagnement</h3>
+            <p>Simulations budgétaires, accompagnement subventions, travaux par étapes…</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section class="page-section" id="installation">
+        <h2 class="step-title step-2">Installation & mise en service certifiées</h2>
+        <div class="page-grid">
+
+          <article class="page-card">
+            <figure><img src="assets/Installation.png" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;"></figure>
+            <h3>Pose dans les règles de l’art</h3>
+            <p>Intervention par techniciens qualifiés, respect des règles fabricants et normes en vigueur.</p>
+          </article>
+
+          <article class="page-card">
+            <figure><img src="assets/Mise en service.png" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;"></figure>
+            <h3>Réglages & mise en service</h3>
+            <p>Tests, équilibrage des débits, contrôle des fuites, réglages optimaux.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SECTION 3 -->
+      <section class="page-section" id="maintenance">
+        <h2 class="step-title step-3">Contrats d’entretien & maintenance préventive</h2>
+        <div class="page-grid">
+
+          <article class="page-card">
+            <figure><img src="assets/entretien.png" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;"></figure>
+            <h3>Visites annuelles obligatoires</h3>
+            <p>Nettoyage, contrôle sécurité, vérification des performances.</p>
+          </article>
+
+          <article class="page-card">
+            <figure><img src="assets/Contrat de maintenance.png" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;"></figure>
+            <h3>Contrats adaptés</h3>
+            <p>Formules sur mesure particuliers, commerces et tertiaire.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SECTION 4 -->
+      <section class="page-section" id="depannage">
+        <h2 class="step-title step-4">Dépannage & service après-vente</h2>
+        <div class="page-grid">
+
+          <article class="page-card">
+            <figure><img src="assets/Dépannage.png" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;"></figure>
+            <h3>Diagnostic rapide</h3>
+            <p>Recherche de panne méthodique et devis transparent.</p>
+          </article>
+
+          <article class="page-card">
+            <figure><img src="assets/SAV.png" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;"></figure>
+            <h3>SAV dédié</h3>
+            <p>Suivi, réglages optimisés, remplacement de pièces d’usure.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SECTION 5 -->
+      <section class="page-section" id="pourquoi-nous">
+        <h2 class="step-title step-5">Pourquoi faire confiance à AUDIT CONSEIL ENVIRONNEMENT ?</h2>
+
+        <div class="page-grid">
+          <article class="page-card"><h3>Une expertise reconnue</h3><p>Années d’expérience en climatisation/PAC.</p></article>
+          <article class="page-card"><h3>Techniciens qualifiés</h3><p>Formation continue et certifications.</p></article>
+          <article class="page-card"><h3>Intervention locale</h3><p>Proximité et réactivité dans votre secteur.</p></article>
+          <article class="page-card"><h3>Accompagnement sur la durée</h3><p>Même interlocuteur du début à la fin.</p></article>
+        </div>
+
+      </section>
+
+      <!-- CTA FINAL (ON GARDE) -->
+      <section class="page-section" id="contact-devis">
+        <div class="contact-grid">
+          <div class="contact-box">
+            <h2>Parlons de votre projet</h2>
+            <p>Vous avez un projet ? Nous revenons avec une proposition adaptée.</p>
+            <p class="contact-note">Installation, remplacement, entretien, conseil.</p>
+            <a href="contact.html" class="btn">Demander un devis</a>
+          </div>
+        </div>
+      </section>
+
+    </div> <!-- wrapper -->
+  </main>
+
+  <!-- SCRIPT STICKY CLEAN -->
+  <script>
   (function () {
     const header = document.querySelector('header');
     const headerHeight = header ? header.offsetHeight : 70;
 
-    const titles = Array.from(document.querySelectorAll('.page-section h2'));
-    if (!titles.length) return;
+    const titles = [...document.querySelectorAll('.page-section h2')];
+    const sticky = document.querySelector('.sticky-titles');
+    const inner = sticky.querySelector('.sticky-titles-inner');
 
-    const sticky = document.createElement('div');
-    sticky.className = 'sticky-titles';
-
-    const inner = document.createElement('div');
-    inner.className = 'sticky-titles-inner';
-    sticky.appendChild(inner);
-
-    document.body.appendChild(sticky);
-
-    const lines = new Array(titles.length).fill(null);
+    const active = new Array(titles.length).fill(null);
 
     function onScroll() {
-      const scrollY = window.scrollY || window.pageYOffset;
+      const scrollY = window.scrollY;
 
-      titles.forEach((h2, index) => {
-        const rect = h2.getBoundingClientRect();
-        const absoluteTop = rect.top + scrollY;
+      titles.forEach((h2, i) => {
+        const top = h2.getBoundingClientRect().top + scrollY;
+        const trigger = top - headerHeight - 20;  
+        const removePoint = top - headerHeight - 100;
 
-        // base = position du titre dans la page par rapport au header
-        const base = absoluteTop - headerHeight;
+        const hasLine = active[i];
 
-        const existing = lines[index];
-
-        // Marges de confort
-        const ADD_OFFSET = 20;      // quand on DESCEND : on ajoute la ligne
-        const REMOVE_OFFSET = 80;   // quand on REMONTE : on enlève la ligne
-
-        const shouldAdd    = scrollY >= base - ADD_OFFSET;
-        const shouldRemove = scrollY <  base - REMOVE_OFFSET;
-
-        if (shouldAdd && !existing) {
-          // On crée la ligne sticky
+        if (scrollY >= trigger && !hasLine) {
           const line = document.createElement('p');
           line.className = 'sticky-title-line';
           line.textContent = h2.textContent.trim();
           inner.appendChild(line);
-          lines[index] = line;
-          h2.classList.add('is-cloned'); // l’original devient “transparent”, mais garde sa place
-        } else if (shouldRemove && existing) {
-          // On la retire quand on remonte bien au-dessus
-          inner.removeChild(existing);
-          lines[index] = null;
+          active[i] = line;
+          h2.classList.add('is-cloned');
+        }
+        else if (scrollY < removePoint && hasLine) {
+          inner.removeChild(hasLine);
+          active[i] = null;
           h2.classList.remove('is-cloned');
         }
       });
 
-      // On masque complètement le bloc sticky s’il n’y a aucune ligne
-      sticky.style.display = inner.children.length ? 'block' : 'none';
+      sticky.style.display = inner.children.length ? "block" : "none";
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
   })();
-</script>
+  </script>
 
 </body>
 </html>
