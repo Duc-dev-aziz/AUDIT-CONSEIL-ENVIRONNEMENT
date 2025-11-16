@@ -696,78 +696,37 @@ html[data-theme="dark"] .logo-strip {
 }
 
 
-/* ===== BANDEAU ÉTAPES STICKY ===== */
-.steps-bar {
+/* ===== TITRES DE SECTION STICKY EMPILÉS ===== */
+
+/* Style commun pour les h2 "étapes" */
+.step-title {
   position: sticky;
-  top: 72px;              /* ajuste si ton header est plus haut ou plus bas */
-  z-index: 15;
-  padding: 8px 0 10px;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+  z-index: 5;
+  margin: 0 0 14px;
+  padding: 8px 0;
 }
 
-html[data-theme="light"] .steps-bar {
+/* fond sous les titres pour éviter que ça transparaisse sur les cartes */
+html[data-theme="light"] .step-title {
   background: #f5f7fb;
 }
 
-html[data-theme="dark"] .steps-bar {
+html[data-theme="dark"] .step-title {
   background: #050816;
 }
 
-.steps-bar-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
+/* Offsets empilés sur desktop */
+.step-1 { top: 80px; }
+.step-2 { top: 112px; }
+.step-3 { top: 144px; }
+.step-4 { top: 176px; }
+.step-5 { top: 208px; }
 
-.steps-title {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  opacity: 0.75;
-  margin: 0;
-}
-
-.steps-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 12px;
-  font-size: 12px;
-}
-
-.steps-list li {
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px dashed transparent;
-  opacity: 0.7;
-  white-space: nowrap;
-}
-
-/* État actif = étape déjà “vue” */
-html[data-theme="light"] .steps-list li.is-active {
-  background: #e0f2fe;
-  border-color: #38bdf8;
-  color: #0f172a;
-  opacity: 1;
-}
-
-html[data-theme="dark"] .steps-list li.is-active {
-  background: rgba(56, 189, 248, 0.12);
-  border-color: #38bdf8;
-  color: #e5edff;
-  opacity: 1;
-}
-
-/* Mobile : on laisse wrap si ça ne rentre pas */
+/* Sur mobile : header un peu plus haut, on compacte un peu */
 @media (max-width: 768px) {
-  .steps-bar {
-    top: 64px;
-  }
-
-  .steps-list {
-    font-size: 11px;
-  }
+  .step-1 { top: 76px; }
+  .step-2 { top: 106px; }
+  .step-3 { top: 136px; }
+  .step-4 { top: 166px; }
+  .step-5 { top: 196px; }
 }
-
