@@ -1,15 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact & Demande de devis – AUDIT CONSEIL ENVIRONNEMENT</title>
 
-<!DOCTYPE html><html lang="fr"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="style.css"><link rel="icon" href="assets/favicon.png">
-<title>Contact</title></head><body>
-<header><h1>Contact & Devis</h1></header>
-<div class="wrapper">
-  <div class="card">
-    <p>Email : contact@aircontrol-environnement.fr</p>
-    <p>Téléphone : 01 23 45 67 89</p>
-    <p>Adresse : Dreux (28)</p>
-  </div>
-</div>
-<footer>© 2025 Air Control Environnement</footer>
-</body></html>
+  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="icon" href="assets/favicon.png">
+
+  <meta name="description"
+        content="Contact et demande de devis pour vos projets de climatisation et pompes à chaleur : installation, maintenance, dépannage, études et accompagnement.">
+</head>
+<body class="page-services">
+
+  <!-- HEADER (identique aux autres pages) -->
+  <header>
+    <div class="wrapper navbar">
+      <div class="brand">
+        <span class="brand-badge"></span>
+        <span>AUDIT CONSEIL ENVIRONNEMENT</span>
+      </div>
+
+      <button id="nav-toggle" class="nav-toggle" type="button">☰</button>
+
+      <nav class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="clients.html">Tertiaire & particuliers</a>
+        <a href="zones.html">Zones d’intervention</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button id="theme-toggle" class="theme-toggle" type="button">☾</button>
+    </div>
+  </header>
+
+
+
+  <!-- =====================
+       HERO CONTACT / DEVIS
+       ===================== -->
+  <section class="hero hero-services">
+    <div class="hero-bg hero-services-bg"></div>
+
+    <div class="wrapper">
+      <div class="hero-wrapper">
+        <div class="hero-content">
+          <h1 class="hero-title-main">
+            Demande de devis & prise de contact
+          </h1>
+
+          <p class="hero-lead">
+            Expliquez-nous votre besoin : installation, remplacement, maintenance
+            ou dépannage. Nous vous recontactons rapidement.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#formulaire" class="btn">Envoyer ma demande</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- =====================
+       LOGOS PARTENAIRES
+       ===================== -->
+  <section class="logo-strip">
+    <div class="logo-strip-inner">
+
+      <p class="logo-strip-title">Nos partenaires historiques</p>
+
+      <div class="logo-row">
+        <img src="assets/logo-daikin.png" alt="Daikin">
+        <img src="assets/logo toshiba.png" alt="Toshiba">
+        <img src="assets/logo GE.png" alt="General Electric">
+        <img src="assets/logo Panasonic.png" alt="Panasonic">
+        <img src="assets/LG logo.png" alt="LG">
+        <img src="assets/Mitsubishi_Electric_logo.svg.png" alt="Mitsubishi Electric">
+        <img src="assets/atlantic_logo_garanka_.png" alt="Atlantic">
+        <img src="assets/technibel-climatisation-logo-1.jpg" alt="Technibel">
+        <img src="assets/Hitachi_logo.png" alt="Hitachi">
+        <img src="assets/Logo samsung - copie.png" alt="Samsung">
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- =====================
+       FORMULAIRE CONTACT
+       ===================== -->
+  <main class="page-main">
+    <div class="wrapper" id="formulaire">
+
+      <!-- TITRE -->
+      <section class="page-section">
+        <h2>Décrivez votre projet</h2>
+
+        <p style="max-width:700px;margin:0 auto 24px;text-align:center;opacity:0.75;">
+          Remplissez le formulaire ci-dessous : un spécialiste vous recontacte dans la journée
+          pour échanger sur votre situation et établir un devis adapté.
+        </p>
+
+        <!-- FORMULAIRE -->
+        <div class="page-card" style="max-width:780px;margin:0 auto;">
+
+          <form action="#" method="post" style="display:grid;gap:18px;">
+
+            <!-- Nom -->
+            <div>
+              <label>Nom complet</label>
+              <input type="text" required
+                style="width:100%;padding:14px;border-radius:12px;border:1px solid #ccc;">
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label>Email</label>
+              <input type="email" required
+                style="width:100%;padding:14px;border-radius:12px;border:1px solid #ccc;">
+            </div>
+
+            <!-- Téléphone -->
+            <div>
+              <label>Téléphone</label>
+              <input type="text"
+                style="width:100%;padding:14px;border-radius:12px;border:1px solid #ccc;">
+            </div>
+
+            <!-- Type de demande -->
+            <div>
+              <label>Type de demande</label>
+              <select required
+                style="width:100%;padding:14px;border-radius:12px;border:1px solid #ccc;">
+                <option value="">Sélectionner…</option>
+                <option>Installation</option>
+                <option>Remplacement</option>
+                <option>Maintenance / contrat d’entretien</option>
+                <option>Dépannage</option>
+                <option>Autre projet</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label>Détails du projet</label>
+              <textarea required rows="5"
+                style="width:100%;padding:14px;border-radius:12px;border:1px solid #ccc;"></textarea>
+            </div>
+
+            <!-- Bouton -->
+            <div style="text-align:center;">
+              <button type="submit" class="btn" style="padding:14px 28px;font-size:16px;">
+                Envoyer ma demande
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </section>
+
+
+
+      <!-- CONTACT DIRECT -->
+      <section class="page-section">
+        <h2>Contact direct</h2>
+
+        <div class="page-grid">
+
+          <article class="page-card">
+            <h3>Téléphone</h3>
+            <p><strong>À compléter</strong><br>Numéro direct du technicien / chef de projet</p>
+          </article>
+
+          <article class="page-card">
+            <h3>Email</h3>
+            <p><strong>À compléter</strong><br>Adresse professionnelle</p>
+          </article>
+
+          <article class="page-card">
+            <h3>Adresse</h3>
+            <p>Dreux (28) — Intervention Yvelines, Paris, IDF, grande couronne.</p>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+
+
+  <!-- SCRIPT THÈME + BURGER -->
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const btn = document.getElementById('theme-toggle');
+
+      function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        btn.textContent = theme === 'light' ? '☾' : '☀';
+        localStorage.setItem('ace-theme', theme);
+      }
+
+      const saved = localStorage.getItem('ace-theme');
+      applyTheme(saved === 'dark' ? 'dark' : 'light');
+
+      btn.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        applyTheme(next);
+      });
+
+      const navToggle = document.getElementById('nav-toggle');
+      const navLinks = document.querySelectorAll('.nav-links a');
+
+      navToggle.addEventListener('click', () => {
+        const isOpen = document.body.classList.toggle('nav-open');
+        navToggle.textContent = isOpen ? '✕' : '☰';
+      });
+
+      navLinks.forEach(link =>
+        link.addEventListener('click', () => {
+          document.body.classList.remove('nav-open');
+          navToggle.textContent = '☰';
+        })
+      );
+    })();
+  </script>
+
+</body>
+</html>
