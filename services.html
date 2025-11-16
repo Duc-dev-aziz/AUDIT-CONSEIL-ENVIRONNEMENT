@@ -207,79 +207,80 @@
     const header = document.querySelector('header');
     let headerHeight = header ? header.offsetHeight : 70;
 
-    // Tous les h2 des sections de contenu
+    // Tous les h2 des sections (dans l’ordre de la page)
     const titles = Array.from(document.querySelectorAll('.page-section h2'));
     if (!titles.length) return;
 
-    // On crée une seule barre sticky pour la pile
+    // Création (ou récupération) de la barre sticky
     let sticky = document.querySelector('.sticky-titles');
     if (!sticky) {
       sticky = document.createElement('div');
       sticky.className = 'sticky-titles';
 
-      const inner = document.createElement('div');
-      inner.className = 'sticky-titles-inner';
-      sticky.appendChild(inner);
+      const innerDiv = document.createElement('div');
+      innerDiv.className = 'sticky-titles-inner';
+      sticky.appendChild(innerDiv);
 
-      // On la met juste après le header
-      document.body.insertBefore(sticky, header ? header.nextSibling : document.body.firstChild);
+      // On insère la barre juste après le header
+      if (header) {
+        header.parentNode.insertBefore(sticky, header.nextSibling);
+      } else {
+        document.body.insertBefore(sticky, document.body.firstChild);
+      }
     }
 
     const inner = sticky.querySelector('.sticky-titles-inner');
     const lines = new Array(titles.length).fill(null);
 
-    // Seuils d'apparition / disparition (en px sous le haut de la fenêtre)
-    function getThresholds() {
-      headerHeight = header ? header.offsetHeight : 70;
-      return {
-        down: headerHeight + 10, // quand on descend, on fige un peu après le header
-        up:   headerHeight + 50  // quand on remonte, on enlève quand le titre est bien redescendu
-      };
-    }
+    // Hauteur approximative d'une ligne de titre (24px font-size * 1.3 line-height ≈ 32px)
+    const LINE_HEIGHT = 32;
 
-    let { down: triggerDown, up: triggerUp } = getThresholds();
+    function updateHeaderHeight() {
+      headerHeight = header ? header.offsetHeight : 70;
+    }
 
     function onScroll() {
       const scrollY = window.scrollY || window.pageYOffset;
+      updateHeaderHeight();
 
       titles.forEach((h2, index) => {
         const rect = h2.getBoundingClientRect();
+        const top = rect.top;
         const existing = lines[index];
 
-        // rect.top = position du h2 par rapport au haut de la fenêtre
-        const top = rect.top;
+        // Seuil d'apparition pour CE titre
+        // 1er titre : headerHeight + 10
+        // 2e titre : headerHeight + 10 + 1*LINE_HEIGHT
+        // 3e titre : headerHeight + 10 + 2*LINE_HEIGHT, etc.
+        const showThreshold = headerHeight + 10 + index * LINE_HEIGHT;
 
-        // DESCENTE : on ajoute la ligne quand le h2 dépasse légèrement sous le header
-        if (top <= triggerDown && !existing) {
+        // Seuil de retrait (un peu plus bas pour éviter le scintillement)
+        const hideThreshold = headerHeight + 40 + index * LINE_HEIGHT;
+
+        // Quand on DESCEND : le titre atteint sa "ligne" -> on le clone
+        if (top <= showThreshold && !existing) {
           const line = document.createElement('p');
           line.className = 'sticky-title-line';
           line.textContent = h2.textContent.trim();
           inner.appendChild(line);
           lines[index] = line;
-          h2.classList.add('is-cloned'); // on cache l’original mais il garde sa place
+          h2.classList.add('is-cloned'); // l’original reste en place mais devient invisible
         }
 
-        // REMONTÉE : on enlève la ligne seulement quand le titre est bien revenu plus bas
-        if (top > triggerUp && existing) {
+        // Quand on REMONTE : le titre redescend bien en dessous -> on enlève la ligne
+        if (top > hideThreshold && existing) {
           inner.removeChild(existing);
           lines[index] = null;
           h2.classList.remove('is-cloned');
         }
       });
 
-      // Si aucune ligne → on masque complètement la barre (plus de bande blanche)
+      // S'il n'y a plus de titres figés, on cache complètement la barre
       sticky.style.display = inner.children.length ? 'block' : 'none';
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', () => {
-      const t = getThresholds();
-      triggerDown = t.down;
-      triggerUp = t.up;
-      onScroll();
-    });
-
-    // Premier calcul au chargement
+    window.addEventListener('resize', onScroll);
     onScroll();
   })();
 </script>
