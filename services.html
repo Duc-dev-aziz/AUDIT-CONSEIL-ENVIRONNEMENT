@@ -290,15 +290,13 @@
 </main>
 
 <script>
-  window.addEventListener('load', function () {
+  (function () {
     const header = document.querySelector('header');
     const headerHeight = header ? header.offsetHeight : 70;
 
-    // Tous les titres h2 de tes sections de contenu
     const titles = Array.from(document.querySelectorAll('.page-section h2'));
     if (!titles.length) return;
 
-    // Conteneur sticky pour la pile de titres
     const sticky = document.createElement('div');
     sticky.className = 'sticky-titles';
 
@@ -306,14 +304,8 @@
     inner.className = 'sticky-titles-inner';
     sticky.appendChild(inner);
 
-    // 👉 On l'insère JUSTE APRÈS le header, pas en bas de la page
-    if (header && header.parentNode) {
-      header.parentNode.insertBefore(sticky, header.nextSibling);
-    } else {
-      document.body.insertBefore(sticky, document.body.firstChild);
-    }
+    document.body.appendChild(sticky);
 
-    // Tableau qui mémorise les lignes déjà créées
     const lines = new Array(titles.length).fill(null);
 
     function onScroll() {
@@ -323,34 +315,41 @@
         const rect = h2.getBoundingClientRect();
         const absoluteTop = rect.top + scrollY;
 
-        // Est-ce que ce titre est déjà passé sous le header ?
-        const isPast = scrollY + headerHeight >= absoluteTop;
+        // base = position du titre dans la page par rapport au header
+        const base = absoluteTop - headerHeight;
 
         const existing = lines[index];
 
-        if (isPast && !existing) {
-          // On ajoute la ligne dans la pile
+        // Marges de confort
+        const ADD_OFFSET = 20;      // quand on DESCEND : on ajoute la ligne
+        const REMOVE_OFFSET = 80;   // quand on REMONTE : on enlève la ligne
+
+        const shouldAdd    = scrollY >= base - ADD_OFFSET;
+        const shouldRemove = scrollY <  base - REMOVE_OFFSET;
+
+        if (shouldAdd && !existing) {
+          // On crée la ligne sticky
           const line = document.createElement('p');
           line.className = 'sticky-title-line';
           line.textContent = h2.textContent.trim();
           inner.appendChild(line);
           lines[index] = line;
-          h2.classList.add('is-cloned');
-        } else if (!isPast && existing) {
-          // On remonte : on enlève la ligne et on ré-affiche le h2
+          h2.classList.add('is-cloned'); // l’original devient “transparent”, mais garde sa place
+        } else if (shouldRemove && existing) {
+          // On la retire quand on remonte bien au-dessus
           inner.removeChild(existing);
           lines[index] = null;
           h2.classList.remove('is-cloned');
         }
       });
 
-      // On masque complètement le bloc tant qu'il n'y a aucune ligne
+      // On masque complètement le bloc sticky s’il n’y a aucune ligne
       sticky.style.display = inner.children.length ? 'block' : 'none';
     }
 
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
-  });
+  })();
 </script>
 
 </body>
