@@ -205,69 +205,85 @@
   <script>
   (function () {
     const header = document.querySelector('header');
-    const headerHeight = header ? header.offsetHeight : 70;
+    let headerHeight = header ? header.offsetHeight : 70;
 
-    // Tous les h2 des sections de la page services
+    // Tous les h2 des sections de contenu
     const titles = Array.from(document.querySelectorAll('.page-section h2'));
     if (!titles.length) return;
 
-    // Conteneur sticky déjà présent dans le HTML ?
-    let sticky = document.querySelector('.services-titles-stack');
-    let list = sticky && sticky.querySelector('.services-titles-list');
-
-    // Si jamais le bloc n'existe pas (sécurité), on le recrée
+    // On crée une seule barre sticky pour la pile
+    let sticky = document.querySelector('.sticky-titles');
     if (!sticky) {
       sticky = document.createElement('div');
-      sticky.className = 'services-titles-stack';
-      const wrap = document.createElement('div');
-      wrap.className = 'wrapper';
-      list = document.createElement('div');
-      list.className = 'services-titles-list';
-      list.id = 'servicesTitlesList';
-      wrap.appendChild(list);
-      sticky.appendChild(wrap);
-      document.body.insertBefore(sticky, document.body.firstChild);
+      sticky.className = 'sticky-titles';
+
+      const inner = document.createElement('div');
+      inner.className = 'sticky-titles-inner';
+      sticky.appendChild(inner);
+
+      // On la met juste après le header
+      document.body.insertBefore(sticky, header ? header.nextSibling : document.body.firstChild);
     }
 
-    if (!list) return;
-
-    // On garde une référence sur chaque ligne créée
+    const inner = sticky.querySelector('.sticky-titles-inner');
     const lines = new Array(titles.length).fill(null);
 
+    // Seuils d'apparition / disparition (en px sous le haut de la fenêtre)
+    function getThresholds() {
+      headerHeight = header ? header.offsetHeight : 70;
+      return {
+        down: headerHeight + 10, // quand on descend, on fige un peu après le header
+        up:   headerHeight + 50  // quand on remonte, on enlève quand le titre est bien redescendu
+      };
+    }
+
+    let { down: triggerDown, up: triggerUp } = getThresholds();
+
     function onScroll() {
-      const trigger = headerHeight + 10; // point où le titre doit se "figer"
-      const hysteresis = 40;             // marge pour éviter le clignotement
+      const scrollY = window.scrollY || window.pageYOffset;
 
       titles.forEach((h2, index) => {
         const rect = h2.getBoundingClientRect();
-        const top = rect.top;
         const existing = lines[index];
 
-        const shouldAdd    = top <= trigger;              // on descend
-        const shouldRemove = top > trigger + hysteresis;  // on remonte bien en dessous
+        // rect.top = position du h2 par rapport au haut de la fenêtre
+        const top = rect.top;
 
-        if (shouldAdd && !existing) {
+        // DESCENTE : on ajoute la ligne quand le h2 dépasse légèrement sous le header
+        if (top <= triggerDown && !existing) {
           const line = document.createElement('p');
-          line.className = 'services-titles-item';
+          line.className = 'sticky-title-line';
           line.textContent = h2.textContent.trim();
-          list.appendChild(line);
+          inner.appendChild(line);
           lines[index] = line;
-          h2.classList.add('is-cloned'); // l'original reste à sa place mais devient invisible
-        } else if (shouldRemove && existing) {
-          list.removeChild(existing);
+          h2.classList.add('is-cloned'); // on cache l’original mais il garde sa place
+        }
+
+        // REMONTÉE : on enlève la ligne seulement quand le titre est bien revenu plus bas
+        if (top > triggerUp && existing) {
+          inner.removeChild(existing);
           lines[index] = null;
           h2.classList.remove('is-cloned');
         }
       });
 
-      // on cache complètement la pile s'il n'y a aucune ligne
-      sticky.style.display = list.children.length ? 'block' : 'none';
+      // Si aucune ligne → on masque complètement la barre (plus de bande blanche)
+      sticky.style.display = inner.children.length ? 'block' : 'none';
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => {
+      const t = getThresholds();
+      triggerDown = t.down;
+      triggerUp = t.up;
+      onScroll();
+    });
+
+    // Premier calcul au chargement
     onScroll();
   })();
 </script>
+
 
 </body>
 </html>
