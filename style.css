@@ -565,6 +565,21 @@ footer {
   margin-top: 18px;
 }
 
+
+
+/* Grille 2x2 pour la section "Pourquoi nous faire confiance" */
+#pourquoi-nous .page-grid {
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+}
+
+/* Sur mobile : 1 colonne */
+@media (max-width: 768px) {
+  #pourquoi-nous .page-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+
 .page-card {
   border-radius: 18px;
   padding: 20px 22px;
@@ -677,6 +692,82 @@ html[data-theme="dark"] .logo-strip {
   .logo-row img {
     height: 28px;
     max-width: 110px;
+  }
+}
+
+
+/* ===== BANDEAU ÉTAPES STICKY ===== */
+.steps-bar {
+  position: sticky;
+  top: 72px;              /* ajuste si ton header est plus haut ou plus bas */
+  z-index: 15;
+  padding: 8px 0 10px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+html[data-theme="light"] .steps-bar {
+  background: #f5f7fb;
+}
+
+html[data-theme="dark"] .steps-bar {
+  background: #050816;
+}
+
+.steps-bar-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.steps-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.steps-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  font-size: 12px;
+}
+
+.steps-list li {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px dashed transparent;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+/* État actif = étape déjà “vue” */
+html[data-theme="light"] .steps-list li.is-active {
+  background: #e0f2fe;
+  border-color: #38bdf8;
+  color: #0f172a;
+  opacity: 1;
+}
+
+html[data-theme="dark"] .steps-list li.is-active {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: #38bdf8;
+  color: #e5edff;
+  opacity: 1;
+}
+
+/* Mobile : on laisse wrap si ça ne rentre pas */
+@media (max-width: 768px) {
+  .steps-bar {
+    top: 64px;
+  }
+
+  .steps-list {
+    font-size: 11px;
   }
 }
 
