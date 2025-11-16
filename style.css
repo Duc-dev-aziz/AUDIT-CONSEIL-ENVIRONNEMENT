@@ -1055,3 +1055,339 @@ html[data-theme="dark"] .ace-field textarea:focus {
     font-size: 22px;
   }
 }
+
+
+
+/* ============================================
+   HOME – mise en forme générale
+   ============================================ */
+
+.page-home .page-main {
+  padding-top: 0; /* hero collé sous le header, comme services */
+}
+
+/* HERO HOME : on réutilise la même structure que services */
+.hero-home {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-home .hero-wrapper {
+  padding: 120px 0 110px;
+}
+
+.hero-home .hero-title-main {
+  font-size: clamp(32px, 4.5vw, 52px);
+  margin-bottom: 16px;
+}
+
+.hero-home .hero-lead {
+  max-width: 640px;
+  margin: 0 auto 26px;
+}
+
+.hero-home .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Image de fond du hero home – remplace l'URL si besoin */
+.hero-home-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-image: url("assets/hero-home.jpg"); /* ← A REMPLACER PAR TON IMAGE */
+  z-index: -2;
+}
+
+.hero-home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 23, 42, 0.62),
+    rgba(15, 23, 42, 0.70)
+  );
+  z-index: -1;
+}
+
+/* ============================================
+   HOME – sections
+   ============================================ */
+
+.page-home .page-section {
+  padding: 48px 0 56px;
+}
+
+/* Kicker au-dessus de certains titres */
+.section-kicker {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 26px;
+  margin: 0 0 24px;
+  text-align: left;
+}
+
+/* PARTENAIRES */
+.home-partners {
+  text-align: center;
+}
+
+.partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px 40px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.partners-logos img {
+  max-height: 32px;
+  opacity: 0.9;
+  filter: grayscale(0.1);
+}
+
+/* GRID 4 CARTES */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.home-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px 22px 20px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+html[data-theme="dark"] .home-card {
+  background: #050816;
+  border-color: rgba(148, 163, 184, 0.45);
+}
+
+.home-card h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.home-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.home-card .card-link {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* BLOCS ALTERNÉS */
+.home-alt {
+  background: #f5f7fb;
+}
+
+html[data-theme="dark"] .home-alt {
+  background: #050816;
+}
+
+.home-alt-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.home-alt-media img {
+  width: 100%;
+  border-radius: 26px;
+  display: block;
+  object-fit: cover;
+}
+
+.home-alt-text h2 {
+  font-size: 26px;
+  margin: 0 0 14px;
+}
+
+.home-alt-text p {
+  margin: 0 0 10px;
+}
+
+/* Variante inversée (texte gauche / image droite) */
+.home-alt--reverse .home-alt-inner {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+}
+
+.home-alt--reverse .home-alt-media {
+  order: 2;
+}
+
+.home-alt--reverse .home-alt-text {
+  order: 1;
+}
+
+/* CTA BAND */
+.home-cta-band {
+  background: linear-gradient(90deg, #1e90ff, #ff7b32);
+  color: #fff;
+}
+
+.home-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.home-cta-text h2 {
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+
+.home-cta-text p {
+  margin: 0;
+  max-width: 520px;
+}
+
+.home-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* AVIS CLIENTS */
+.home-testimonials .section-title {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.home-grid--testimonials {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.home-testimonial {
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px 22px 20px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+html[data-theme="dark"] .home-testimonial {
+  background: #050816;
+  border-color: rgba(148, 163, 184, 0.45);
+}
+
+.home-testimonial .stars {
+  color: #fbbf24;
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.home-testimonial .quote {
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+.home-testimonial .author {
+  font-size: 13px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* ZONE INTERVENTION */
+.home-zone-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.home-zone-note {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.home-zone-map-placeholder {
+  border-radius: 22px;
+  border: 1px dashed rgba(148, 163, 184, 0.7);
+  padding: 38px 22px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* CTA FINAL */
+.home-final-cta {
+  text-align: center;
+}
+
+.home-final-cta h2 {
+  font-size: 26px;
+  margin: 0 0 10px;
+}
+
+.home-final-cta p {
+  margin: 0 0 18px;
+}
+
+/* ============================================
+   HOME – responsive
+   ============================================ */
+
+@media (max-width: 992px) {
+  .home-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-alt-inner,
+  .home-zone-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-alt--reverse .home-alt-media,
+  .home-alt--reverse .home-alt-text {
+    order: initial;
+  }
+
+  .home-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-home .hero-wrapper {
+    padding: 90px 0 80px;
+  }
+
+  .home-grid,
+  .home-grid--testimonials {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page-home .page-section {
+    padding: 40px 0 46px;
+  }
+
+  .home-partners {
+    padding-top: 28px;
+  }
+}
