@@ -12,32 +12,40 @@
 
   <!-- HEADER (même structure que index.html) -->
   <header>
-    <div class="wrapper navbar">
-      <div class="brand">
-        <span class="brand-badge"></span>
-        <span>AUDIT CONSEIL ENVIRONNEMENT</span>
-      </div>
+  <div class="wrapper navbar">
+    <!-- Nom de l'entreprise cliquable vers l'accueil -->
+    <a href="index.html" class="brand">
+      <span class="brand-badge"></span>
+      <span>AUDIT CONSEIL ENVIRONNEMENT</span>
+    </a>
 
-      <!-- Burger mobile -->
-      <button id="nav-toggle"
-              class="nav-toggle"
-              type="button"
-              aria-label="Ouvrir le menu"
-              aria-expanded="false">
-        ☰
-      </button>
+    <!-- Bouton burger (mobile) -->
+    <button id="nav-toggle"
+            class="nav-toggle"
+            type="button"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false">
+      ☰
+    </button>
 
-      <nav class="nav-links">
-        <a href="index.html#accueil">Accueil</a>
-        <a href="services.html">Services</a>
-        <a href="index.html#clients">Tertiaire & particuliers</a>
-        <a href="index.html#zones">Zones d’intervention</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <!-- Nouveau menu -->
+    <nav class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="tertiaire.html">Tertiaire</a>
+      <a href="particuliers.html">Particuliers</a>
+      <a href="contact.html">Demande de devis / contact</a>
+    </nav>
 
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Changer le thème">☾</button>
-    </div>
-  </header>
+    <!-- Bouton thème -->
+    <button id="theme-toggle"
+            class="theme-toggle"
+            type="button"
+            aria-label="Changer le thème">
+      ☾
+    </button>
+  </div>
+</header>
 
   <main class="page-main">
 
