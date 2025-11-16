@@ -542,6 +542,11 @@ footer {
   padding-top: 0;
 }
 
+/* Page Contact : supprimer l’espace au-dessus du hero */
+.page-contact .page-main {
+  padding-top: 0;
+}
+
 .page-header {
   margin-bottom: 32px;
 }
