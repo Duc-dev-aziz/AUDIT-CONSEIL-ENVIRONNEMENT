@@ -291,37 +291,52 @@
 
 <script>
   (function () {
-    const list = document.getElementById('servicesTitlesList');
-    if (!list) return;
+    const header = document.querySelector('header');
+    const headerHeight = header ? header.offsetHeight : 70;
 
-    const ids = ['cycle-vie', 'installation', 'maintenance', 'depannage', 'pourquoi-nous'];
-    const seen = new Set();
+    const titles = Array.from(document.querySelectorAll('.page-section h2'));
+    if (!titles.length) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
+    const sticky = document.createElement('div');
+    sticky.className = 'sticky-titles';
 
-        const id = entry.target.id;
-        if (!ids.includes(id) || seen.has(id)) return;
+    const inner = document.createElement('div');
+    inner.className = 'sticky-titles-inner';
+    sticky.appendChild(inner);
 
-        seen.add(id);
+    document.body.appendChild(sticky);
 
-        const h2 = entry.target.querySelector('h2');
-        if (!h2) return;
+    const lines = new Array(titles.length).fill(null);
 
-        const item = document.createElement('div');
-        item.className = 'services-titles-item';
-        item.textContent = h2.textContent.trim();
-        list.appendChild(item);
+    function onScroll() {
+      const scrollY = window.scrollY || window.pageYOffset;
+
+      titles.forEach((h2, index) => {
+        const rect = h2.getBoundingClientRect();
+        const absoluteTop = rect.top + scrollY;
+        const isPast = scrollY + headerHeight >= absoluteTop;
+
+        const existing = lines[index];
+
+        if (isPast && !existing) {
+          const line = document.createElement('p');
+          line.className = 'sticky-title-line';
+          line.textContent = h2.textContent.trim();
+          inner.appendChild(line);
+          lines[index] = line;
+          h2.classList.add('is-cloned');
+        } else if (!isPast && existing) {
+          inner.removeChild(existing);
+          lines[index] = null;
+          h2.classList.remove('is-cloned');
+        }
       });
-    }, {
-      threshold: 0.4
-    });
 
-    ids.forEach(id => {
-      const section = document.getElementById(id);
-      if (section) observer.observe(section);
-    });
+      sticky.style.display = inner.children.length ? 'block' : 'none';
+    }
+
+    window.addEventListener('scroll', onScroll);
+    onScroll();
   })();
 </script>
 
