@@ -2,277 +2,365 @@
 <html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>AUDIT CONSEIL ENVIRONNEMENT – Climatisation & pompes à chaleur tertiaire / résidentiel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audit Conseil Environnement – Climatisation & pompes à chaleur</title>
   <link rel="stylesheet" href="style.css?v=3">
   <link rel="icon" href="assets/favicon.png">
-  <meta name="description" content="Audit, conseil et accompagnement de projets de climatisation & pompes à chaleur. Interventions pour le tertiaire, les commerces et les particuliers – Dreux, Île-de-France, Paris et grande couronne.">
+  <meta name="description" content="Installations, études et maintenance de climatisations & pompes à chaleur pour particuliers et professionnels. Audit Conseil Environnement vous accompagne de l’étude au SAV.">
 </head>
-<body>
+<body class="page-home">
 
-  <!-- HEADER + MENU -->
+  <!-- HEADER (même que services / contact) -->
   <header>
-  <div class="wrapper navbar">
-    <!-- Nom de l'entreprise cliquable vers l'accueil -->
-    <a href="index.html" class="brand">
-      <span class="brand-badge"></span>
-      <span>AUDIT CONSEIL ENVIRONNEMENT</span>
-    </a>
+    <div class="wrapper navbar">
+      <!-- Nom de l'entreprise cliquable vers l'accueil -->
+      <a href="index.html" class="brand">
+        <span class="brand-badge"></span>
+        <span>AUDIT CONSEIL ENVIRONNEMENT</span>
+      </a>
 
-    <!-- Bouton burger (mobile) -->
-    <button id="nav-toggle"
-            class="nav-toggle"
-            type="button"
-            aria-label="Ouvrir le menu"
-            aria-expanded="false">
-      ☰
-    </button>
+      <!-- Bouton burger (mobile) -->
+      <button id="nav-toggle"
+              class="nav-toggle"
+              type="button"
+              aria-label="Ouvrir le menu"
+              aria-expanded="false">
+        ☰
+      </button>
 
-    <!-- Nouveau menu -->
-    <nav class="nav-links">
-      <a href="index.html">Accueil</a>
-      <a href="services.html">Services</a>
-      <a href="tertiaire.html">Tertiaire</a>
-      <a href="particuliers.html">Particuliers</a>
-      <a href="contact.html">Demande de devis / contact</a>
-    </nav>
+      <!-- Menu principal -->
+      <nav id="nav-menu" class="nav-links">
+        <a href="index.html" class="is-active">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="services.html#tertiaire">Tertiaire</a>
+        <a href="services.html#particuliers">Particuliers</a>
+        <a href="contact.html">Demande de devis / contact</a>
+      </nav>
 
-    <!-- Bouton thème -->
-    <button id="theme-toggle"
-            class="theme-toggle"
-            type="button"
-            aria-label="Changer le thème">
-      ☾
-    </button>
-  </div>
-</header>
+      <!-- Bouton thème -->
+      <button id="theme-toggle"
+              class="theme-toggle"
+              type="button"
+              aria-label="Changer le thème">
+        🌗
+      </button>
+    </div>
+  </header>
 
+  <main class="page-main">
 
-  <!-- HERO -->
-<section id="accueil" class="hero">
-  <div class="hero-bg"></div>
+    <!-- ===========================
+         HERO HOME
+         =========================== -->
+    <section class="hero hero-home">
+      <!-- Image de fond : tu peux changer l'image dans le CSS ou via une classe dédiée -->
+      <div class="hero-bg hero-home-bg"></div>
 
-  <div class="wrapper">
-    <div class="hero-wrapper">
-      <div class="hero-content">
-        <h1 class="hero-title-main">
-          Depuis plus de 20 ans, nos spécialistes<br> 
-          vous accompagnent au quotidien.
-        </h1>
+      <div class="wrapper">
+        <div class="hero-wrapper">
+          <div class="hero-content">
+            <h1 class="hero-title-main">
+              Le confort thermique,<br>
+              pensé pour votre quotidien.
+            </h1>
+            <p class="hero-lead">
+              Climatisation, pompes à chaleur, rénovation énergétique :
+              AUDIT CONSEIL ENVIRONNEMENT vous accompagne de l’étude
+              à la mise en service, en résidentiel comme en tertiaire.
+            </p>
 
-        <p class="hero-lead">
-          Climatisation, pompes à chaleur et performance énergétique pour le tertiaire et les particuliers.
+            <div class="hero-actions">
+              <a href="contact.html#devis" class="btn btn-primary">
+                Demander un devis
+              </a>
+              <a href="services.html" class="btn btn-ghost">
+                Découvrir nos services
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         PARTENAIRES (même style)
+         =========================== -->
+    <section class="page-section home-partners">
+      <div class="wrapper">
+        <p class="section-kicker">Nos partenaires historiques</p>
+        <div class="partners-logos">
+          <!-- Remplace les src par tes logos -->
+          <img src="assets/logo-daikin.png" alt="Daikin">
+          <img src="assets/logo-lg.png" alt="LG">
+          <img src="assets/logo-mitsubishi.png" alt="Mitsubishi Electric">
+          <img src="assets/logo-atlantic.png" alt="Atlantic">
+          <img src="assets/logo-hitachi.png" alt="Hitachi">
+          <img src="assets/logo-samsung.png" alt="Samsung">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         4 CARTES RAPIDES
+         =========================== -->
+    <section class="page-section home-quick-grid">
+      <div class="wrapper">
+        <h2 class="section-title">Des solutions complètes pour votre projet</h2>
+
+        <div class="home-grid">
+          <article class="home-card">
+            <h3>Installation & remplacement</h3>
+            <p>
+              Étude, dimensionnement et pose de pompes à chaleur
+              et systèmes de climatisation adaptés à votre logement.
+            </p>
+            <a href="services.html" class="card-link">Voir nos services</a>
+          </article>
+
+          <article class="home-card">
+            <h3>Confort résidentiel</h3>
+            <p>
+              Maisons individuelles, appartements, rénovations :
+              solutions silencieuses, économiques et fiables.
+            </p>
+            <a href="services.html#particuliers" class="card-link">
+              Particuliers
+            </a>
+          </article>
+
+          <article class="home-card">
+            <h3>Solutions tertiaires</h3>
+            <p>
+              Commerces, bureaux, bâtiments publics : confort
+              thermique maîtrisé et continuité de service.
+            </p>
+            <a href="services.html#tertiaire" class="card-link">
+              Tertiaire
+            </a>
+          </article>
+
+          <article class="home-card">
+            <h3>Suivi & entretien</h3>
+            <p>
+              Contrats de maintenance, visites annuelles et
+              intervention rapide en cas de panne.
+            </p>
+            <a href="contact.html#devis" class="card-link">
+              Demander un devis entretien
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         BLOC ALTERNÉ #1
+         Image gauche / texte droite
+         =========================== -->
+    <section class="page-section home-alt">
+      <div class="wrapper home-alt-inner">
+        <div class="home-alt-media">
+          <!-- IMAGE A REMPLACER -->
+          <img src="assets/home-confort-salon.jpg"
+               alt="Salon confortable climatisé">
+        </div>
+        <div class="home-alt-text">
+          <p class="section-kicker">Pour les particuliers</p>
+          <h2>Un confort été comme hiver, sans compromis.</h2>
+          <p>
+            Nous analysons votre logement, vos habitudes et vos
+            contraintes pour proposer une solution réellement adaptée :
+            puissance, niveau sonore, consommation, esthétique.
+          </p>
+          <p>
+            Notre objectif : un confort thermique agréable, des factures
+            maîtrisées et un fonctionnement fiable sur la durée.
+          </p>
+          <a href="services.html#particuliers" class="btn-link">
+            Découvrir nos solutions pour particuliers →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         BLOC ALTERNÉ #2
+         Texte gauche / image droite
+         =========================== -->
+    <section class="page-section home-alt home-alt--reverse">
+      <div class="wrapper home-alt-inner">
+        <div class="home-alt-media">
+          <!-- IMAGE A REMPLACER -->
+          <img src="assets/home-bureau-tertiaire.jpg"
+               alt="Bureaux équipés de climatisation">
+        </div>
+        <div class="home-alt-text">
+          <p class="section-kicker">Pour les professionnels</p>
+          <h2>Des solutions fiables pour vos locaux tertiaires.</h2>
+          <p>
+            Commerces, bureaux, cabinets médicaux, hôtels :
+            nous concevons des solutions performantes, silencieuses
+            et conformes aux exigences réglementaires.
+          </p>
+          <p>
+            De l’étude de faisabilité au suivi d’exploitation,
+            AUDIT CONSEIL ENVIRONNEMENT reste votre interlocuteur unique.
+          </p>
+          <a href="services.html#tertiaire" class="btn-link">
+            En savoir plus sur nos projets tertiaires →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         BLOC CTA "BESOIN D'AIDE ?"
+         =========================== -->
+    <section class="page-section home-cta-band">
+      <div class="wrapper home-cta-inner">
+        <div class="home-cta-text">
+          <h2>Un projet en tête ?</h2>
+          <p>
+            Parlez-nous de votre logement ou de vos locaux,
+            nous vous proposons une première analyse et un chiffrage
+            adaptés à votre situation.
+          </p>
+        </div>
+        <div class="home-cta-actions">
+          <a href="contact.html#devis" class="btn btn-primary">
+            Demander un devis
+          </a>
+          <a href="contact.html" class="btn btn-ghost">
+            Nous contacter
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         AVIS CLIENTS (3 cartes)
+         =========================== -->
+    <section class="page-section home-testimonials">
+      <div class="wrapper">
+        <p class="section-kicker">Avis clients</p>
+        <h2 class="section-title">Ils nous font confiance</h2>
+
+        <div class="home-grid home-grid--testimonials">
+          <article class="home-testimonial">
+            <p class="stars">★★★★★</p>
+            <p class="quote">
+              « Installation rapide et propre, la température est
+              enfin stable dans toute la maison. »
+            </p>
+            <p class="author">– Mme L., Narbonne</p>
+          </article>
+
+          <article class="home-testimonial">
+            <p class="stars">★★★★★</p>
+            <p class="quote">
+              « Très bon conseil sur le choix de la PAC et un suivi
+              sérieux lors de la mise en service. »
+            </p>
+            <p class="author">– M. D., Béziers</p>
+          </article>
+
+          <article class="home-testimonial">
+            <p class="stars">★★★★★</p>
+            <p class="quote">
+              « Nos bureaux sont confortables été comme hiver,
+              sans bruit ni courant d’air. »
+            </p>
+            <p class="author">– Société X, Carcassonne</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         ZONE D'INTERVENTION (mini)
+         =========================== -->
+    <section class="page-section home-zone">
+      <div class="wrapper home-zone-inner">
+        <div class="home-zone-text">
+          <p class="section-kicker">Zone d’intervention</p>
+          <h2>Nous intervenons dans tout l’arc méditerranéen.</h2>
+          <p>
+            Basés en Occitanie, nous accompagnons les particuliers
+            et professionnels sur un large périmètre
+            (Aude, Hérault, Pyrénées-Orientales et départements voisins).
+          </p>
+          <p class="home-zone-note">
+            Sur demande, nous pouvons étudier des projets au-delà
+            de cette zone pour le tertiaire.
+          </p>
+        </div>
+        <div class="home-zone-map">
+          <!-- PLACEHOLDER CARTE -->
+          <div class="home-zone-map-placeholder">
+            Carte de la zone d’intervention<br>
+            (image à intégrer ici)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+         CTA FINAL
+         =========================== -->
+    <section class="page-section home-final-cta">
+      <div class="wrapper">
+        <h2>Prêt à améliorer votre confort thermique ?</h2>
+        <p>
+          Expliquez-nous votre projet en quelques lignes,
+          nous revenons vers vous rapidement avec une première proposition.
         </p>
-
-        <div class="hero-cta-row">
-          <a href="contact.html" class="btn">Demander un devis</a>
-          <a href="#services" class="btn-secondary">Voir les services</a>
-        </div>
-
-        <p class="hero-sub">
-          Basé à Dreux (28) – interventions en Eure-et-Loir, Yvelines, Paris (75) et grande couronne.
-        </p>
+        <a href="contact.html#devis" class="btn btn-primary">
+          Demander mon devis gratuit
+        </a>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+  </main>
 
-
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="wrapper">
-      <h2 class="section-title">Nos services</h2>
-      <p class="section-subtitle">
-        De l’audit initial à la mise en service, nous vous accompagnons sur l’ensemble du cycle de votre projet.
-      </p>
-
-      <div class="cards">
-        <div class="card">
-          <h3>Audit & diagnostic</h3>
-          <p>
-            Analyse de l’existant (clim, PAC, ventilation), relevés sur site,
-            compréhension de vos usages et de vos contraintes techniques
-            et réglementaires.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Études & dimensionnement</h3>
-          <p>
-            Préconisations techniques, choix des technologies (air/air, air/eau),
-            puissances, implantation des unités, en lien avec vos fournisseurs
-            et installateurs.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Suivi de projet & mise en service</h3>
-          <p>
-            Accompagnement des travaux, vérification de la bonne mise en œuvre,
-            réglages, mise en service et contrôle des performances.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Maintenance & dépannage</h3>
-          <p>
-            Contrats de suivi pour les sites tertiaires et interventions de
-            dépannage pour les particuliers (clim en panne, PAC en défaut,
-            baisse de performance…).
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TERTIAIRE / PARTICULIERS -->
-  <section id="clients">
-    <div class="wrapper">
-      <h2 class="section-title">Pour qui intervenons-nous ?</h2>
-      <p class="section-subtitle">
-        Une expertise orientée tertiaire, avec une offre dédiée aussi aux particuliers.
-      </p>
-
-      <div class="contact-grid">
-        <div class="contact-box">
-          <h3>Tertiaire & professionnels</h3>
-          <p>• Bureaux, commerces, hôtels, restaurants</p>
-          <p>• Cabinets médicaux, laboratoires, établissements de santé</p>
-          <p>• Locaux techniques, salles serveurs, petites industries</p>
-          <p>• Copropriétés, bailleurs, gestionnaires de patrimoine</p>
-          <p class="contact-note">
-            Intervention possible en journée ou en horaires adaptés pour limiter
-            l’impact sur votre activité.
-          </p>
-        </div>
-
-        <div class="contact-box">
-          <h3>Particuliers</h3>
-          <p>• Climatisation réversible pour maison ou appartement</p>
-          <p>• Pompes à chaleur pour le chauffage et le confort thermique</p>
-          <p>• Contrôles, réglages, optimisation de votre installation existante</p>
-          <p>• Dépannage en cas de panne, fuite, bruit anormal, défaut de performance</p>
-          <p class="contact-note">
-            Nous vous aidons à comprendre votre installation et à faire les bons
-            choix pour votre confort et votre budget.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ZONES -->
-  <section id="zones">
-    <div class="wrapper">
-      <h2 class="section-title">Zones d’intervention</h2>
-      <p class="section-subtitle">
-        Basé à Dreux, AUDIT CONSEIL ENVIRONNEMENT se déplace largement selon la nature de votre projet.
-      </p>
-      <div class="card">
-        <p class="zones-list">
-          • <strong>Départements principaux :</strong> Eure-et-Loir (28), Yvelines (78), Paris (75)<br>
-          • <strong>Île-de-France :</strong> interventions possibles en petite et grande couronne
-          (92, 93, 94, 95, 91) selon les projets<br>
-          • <strong>Autres secteurs :</strong> étude au cas par cas pour les gros projets tertiaires.
-        </p>
-        <p class="contact-note">
-          Vous avez un doute sur la zone d’intervention ? Contactez-nous, nous pourrons
-          vous répondre rapidement en fonction de la nature du chantier.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="wrapper">
-      <h2 class="section-title">Contact & prise de rendez-vous</h2>
-      <p class="section-subtitle">
-        Un premier échange téléphonique permet de clarifier vos besoins et de cadrer l’intervention.
-      </p>
-
-      <div class="contact-grid">
-        <div class="contact-box">
-          <h3>Coordonnées (à compléter)</h3>
-          <p><strong>Téléphone :</strong> à renseigner</p>
-          <p><strong>Email :</strong> à renseigner</p>
-          <p><strong>Adresse :</strong> Dreux (28)</p>
-          <p class="contact-note">
-            Remplace ces champs par les vraies coordonnées de ton client (mobile,
-            email pro, éventuellement adresse ou ville précise).
-          </p>
-        </div>
-
-        <div class="contact-box">
-          <h3>Message type (exemple)</h3>
-          <p>
-            « Bonjour, je souhaite un accompagnement pour un projet de climatisation /
-            pompe à chaleur (tertiaire ou particulier). Pouvez-vous me rappeler afin
-            d’échanger sur ma situation et les solutions possibles ? »
-          </p>
-          <p class="contact-note">
-            Plus tard, on pourra transformer cette zone en véritable formulaire de contact
-            si tu veux aller plus loin.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
+  <!-- FOOTER (même que les autres pages) -->
   <footer>
-    © AUDIT CONSEIL ENVIRONNEMENT – Climatisation & pompes à chaleur • Dreux, Île-de-France & Paris.
+    <p>
+      &copy; <span id="year"></span> AUDIT CONSEIL ENVIRONNEMENT – Climatisation & pompes à chaleur.
+    </p>
   </footer>
 
-  <!-- SCRIPT THÈME CLAIR / SOMBRE -->
+  <!-- JS NAV + THEME (même script que services / contact) -->
   <script>
-    (function () {
-      const root = document.documentElement;
-      const btn = document.getElementById('theme-toggle');
+    // Année dynamique dans le footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-      function applyTheme(theme) {
-        root.setAttribute('data-theme', theme);
-        btn.textContent = theme === 'light' ? '☾' : '☀';
-        localStorage.setItem('ace-theme', theme);
-      }
-
-      // Thème sauvegardé ?
-      const saved = localStorage.getItem('ace-theme');
-      if (saved === 'light' || saved === 'dark') {
-        applyTheme(saved);
-      } else {
-        applyTheme('light'); // défaut = clair
-      }
-
-      btn.addEventListener('click', () => {
-        const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-        const next = current === 'light' ? 'dark' : 'light';
-        applyTheme(next);
-      });
-
-    // ========== Menu burger ==========
+    // Menu burger
     const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navMenu = document.getElementById('nav-menu');
 
-    if (navToggle) {
+    if (navToggle && navMenu) {
       navToggle.addEventListener('click', () => {
-        const isOpen = document.body.classList.toggle('nav-open');
+        const isOpen = navMenu.classList.toggle('is-open');
         navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        navToggle.textContent = isOpen ? '✕' : '☰';
-      });
-
-      // Quand on clique sur un lien, on referme le menu
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          document.body.classList.remove('nav-open');
-          navToggle.setAttribute('aria-expanded', 'false');
-          navToggle.textContent = '☰';
-        });
       });
     }
-      
-    })();
+
+    // Toggle thème clair / sombre
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    const storedTheme = localStorage.getItem('ace-theme');
+    if (storedTheme) {
+      htmlEl.setAttribute('data-theme', storedTheme);
+    }
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const current = htmlEl.getAttribute('data-theme') || 'light';
+        const next = current === 'light' ? 'dark' : 'light';
+        htmlEl.setAttribute('data-theme', next);
+        localStorage.setItem('ace-theme', next);
+      });
+    }
   </script>
 </body>
 </html>
