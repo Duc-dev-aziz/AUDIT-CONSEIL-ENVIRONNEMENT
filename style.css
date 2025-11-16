@@ -1103,7 +1103,7 @@ html[data-theme="dark"] .ace-field textarea:focus {
   inset: 0;
   background-size: cover;
   background-position: center;
-  background-image: url("assets/hero-home.jpg"); /* ← A REMPLACER PAR TON IMAGE */
+  background-image: url("assets/hero-clim.jpg"); /* ← A REMPLACER PAR TON IMAGE */
   z-index: -2;
 }
 
