@@ -290,13 +290,15 @@
 </main>
 
 <script>
-  (function () {
+  window.addEventListener('load', function () {
     const header = document.querySelector('header');
     const headerHeight = header ? header.offsetHeight : 70;
 
+    // Tous les titres h2 de tes sections de contenu
     const titles = Array.from(document.querySelectorAll('.page-section h2'));
     if (!titles.length) return;
 
+    // Conteneur sticky en haut de la page
     const sticky = document.createElement('div');
     sticky.className = 'sticky-titles';
 
@@ -304,8 +306,10 @@
     inner.className = 'sticky-titles-inner';
     sticky.appendChild(inner);
 
+    // On l'ajoute au <body>
     document.body.appendChild(sticky);
 
+    // Tableau pour mémoriser les lignes déjà créées
     const lines = new Array(titles.length).fill(null);
 
     function onScroll() {
@@ -314,11 +318,14 @@
       titles.forEach((h2, index) => {
         const rect = h2.getBoundingClientRect();
         const absoluteTop = rect.top + scrollY;
+
+        // Est-ce que ce titre est déjà passé sous le header ?
         const isPast = scrollY + headerHeight >= absoluteTop;
 
         const existing = lines[index];
 
         if (isPast && !existing) {
+          // On ajoute la ligne dans la pile
           const line = document.createElement('p');
           line.className = 'sticky-title-line';
           line.textContent = h2.textContent.trim();
@@ -326,18 +333,20 @@
           lines[index] = line;
           h2.classList.add('is-cloned');
         } else if (!isPast && existing) {
+          // On remonte : on enlève la ligne et on ré-affiche le h2
           inner.removeChild(existing);
           lines[index] = null;
           h2.classList.remove('is-cloned');
         }
       });
 
+      // On cache complètement le bloc sticky tant qu'il n'y a aucune ligne
       sticky.style.display = inner.children.length ? 'block' : 'none';
     }
 
     window.addEventListener('scroll', onScroll);
     onScroll();
-  })();
+  });
 </script>
 
 </body>
