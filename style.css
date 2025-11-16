@@ -81,6 +81,16 @@ html[data-theme="dark"] header {
   position: relative;
 }
 
+/* Lien sur le nom de l'entreprise (logo) : cliquable mais sans soulignement */
+a.brand,
+a.brand:hover,
+a.brand:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
 .brand {
   display: flex;
   align-items: center;
