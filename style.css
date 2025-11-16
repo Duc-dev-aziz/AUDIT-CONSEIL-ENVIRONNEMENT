@@ -766,7 +766,7 @@ html[data-theme="dark"] .sticky-titles {
 
 /* ======================================================
    STYLES SPÉCIFIQUES À LA PAGE SERVICES
-   (centrage titres, moins de blanc, ascenseur stylé)
+   (centrage titres, moins de blanc, ascenseur empilé)
    ====================================================== */
 
 /* 1. Wrapper un peu plus large sur cette page */
@@ -776,31 +776,31 @@ html[data-theme="dark"] .sticky-titles {
 
 /* 2. Sections moins hautes (moins de blanc) */
 .page-services .page-section {
-  padding: 40px 0 48px;   /* au lieu des gros 80px */
+  padding: 40px 0 48px;   /* au lieu de 80px */
   margin-top: 32px;
 }
 
-/* 3. Titres de section centrés */
+/* 3. Titres de section centrés, taille correcte */
 .page-services .page-section h2 {
   font-size: 26px;
   font-weight: 700;
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 18px;    /* centre + petit espace en dessous */
+  margin: 0 auto 18px;
 }
 
-/* Quand le h2 est cloné pour l’ascenseur, on cache l’original
-   mais on garde la place (évite les sauts) */
+/* Quand le h2 est cloné pour l’ascenseur, on garde la place
+   pour éviter les sauts, mais on masque le texte */
 .page-services .page-section h2.is-cloned {
   visibility: hidden;
 }
 
-/* 4. Ascenseur (sticky titles) recentré et stylé en "pills" */
+/* 4. Ascenseur (sticky titles) : fond discret, centré */
 .page-services .sticky-titles {
   position: sticky;
   top: 70px;
   z-index: 12;
-  pointer-events: none; /* les clics passent sur le contenu dessous */
+  pointer-events: none;
   background: linear-gradient(
     to bottom,
     rgba(245, 247, 251, 0.96),
@@ -820,31 +820,32 @@ html[data-theme="dark"] .page-services .sticky-titles {
   max-width: 1200px;
   margin: 0 auto;
   padding: 6px 16px 2px;
-  text-align: center; /* ascenseur centré */
+  text-align: center;
 }
 
-/* Chaque titre figé = petite pastille centrée */
+/* 5. Chaque titre figé = une "ligne" centrée (empilée) */
 .page-services .sticky-title-line {
-  display: inline-block;
-  margin: 0 4px 4px;
-  padding: 6px 14px 7px;
-  font-size: 14px;
+  display: block;                 /* ← une ligne par titre */
+  max-width: 720px;
+  margin: 0 auto 6px;             /* centré + espace entre lignes */
+  padding: 8px 18px 9px;
+  font-size: 16px;                /* plus lisible qu’avant */
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(148, 163, 184, 0.55);
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
 }
 
-/* Mode sombre : pastilles un peu plus dark */
+/* Mode sombre : pastilles adaptées */
 html[data-theme="dark"] .page-services .sticky-title-line {
   background: rgba(15, 23, 42, 0.96);
   border-color: rgba(148, 163, 184, 0.8);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
-/* Mobile : on réduit un peu la taille */
+/* 6. Mobile : un peu plus compact */
 @media (max-width: 768px) {
   .page-services .page-section {
     padding: 32px 0 40px;
@@ -857,7 +858,7 @@ html[data-theme="dark"] .page-services .sticky-title-line {
   }
 
   .page-services .sticky-title-line {
-    font-size: 13px;
-    padding: 5px 12px 6px;
+    font-size: 15px;
+    padding: 7px 14px 8px;
   }
 }
