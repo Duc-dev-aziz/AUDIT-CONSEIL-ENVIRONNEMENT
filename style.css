@@ -730,3 +730,59 @@ html[data-theme="dark"] .step-title {
   .step-4 { top: 166px; }
   .step-5 { top: 196px; }
 }
+
+
+
+/* ===== TITRES CUMULÉS – PAGE SERVICES ===== */
+
+/* On remet les h2 de section en mode normal (plus de sticky ici) */
+.page-section h2 {
+  position: static;
+  top: auto;
+  z-index: auto;
+  margin: 0 0 16px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Bloc qui va garder la pile de titres sous le header */
+.services-titles-stack {
+  position: sticky;
+  top: 70px;              /* si ça colle trop au header tu pourras passer à 74–80px */
+  z-index: 15;
+  padding: 8px 0 12px;
+}
+
+/* La liste des titres empilés */
+.services-titles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+
+/* Un titre dans la pile */
+.services-titles-item {
+  padding: 4px 10px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+  max-width: 720px;
+}
+
+html[data-theme="dark"] .services-titles-item {
+  background: rgba(15, 23, 42, 0.96);
+  border-color: rgba(148, 163, 184, 0.7);
+}
+
+@media (max-width: 768px) {
+  .services-titles-stack {
+    top: 64px;
+  }
+
+  .services-titles-item {
+    font-size: 12px;
+  }
+}
