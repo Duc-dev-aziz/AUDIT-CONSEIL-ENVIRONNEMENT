@@ -709,6 +709,8 @@ html[data-theme="dark"] .logo-strip {
    mais on garde la place pour éviter que la mise en page bouge */
 .page-section h2.is-cloned {
   visibility: hidden;
+  height: 1em;          /* ← garde la hauteur du titre */
+  margin: 0 0 18px;     /* ← même marge qu'avant */
 }
 
 /* Conteneur sticky qui va accueillir la pile de titres */
