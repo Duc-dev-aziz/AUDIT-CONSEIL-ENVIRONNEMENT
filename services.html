@@ -207,44 +207,67 @@
     const header = document.querySelector('header');
     const headerHeight = header ? header.offsetHeight : 70;
 
-    const titles = [...document.querySelectorAll('.page-section h2')];
-    const sticky = document.querySelector('.sticky-titles');
-    const inner = sticky.querySelector('.sticky-titles-inner');
+    // Tous les h2 des sections de la page services
+    const titles = Array.from(document.querySelectorAll('.page-section h2'));
+    if (!titles.length) return;
 
-    const active = new Array(titles.length).fill(null);
+    // Conteneur sticky déjà présent dans le HTML ?
+    let sticky = document.querySelector('.services-titles-stack');
+    let list = sticky && sticky.querySelector('.services-titles-list');
+
+    // Si jamais le bloc n'existe pas (sécurité), on le recrée
+    if (!sticky) {
+      sticky = document.createElement('div');
+      sticky.className = 'services-titles-stack';
+      const wrap = document.createElement('div');
+      wrap.className = 'wrapper';
+      list = document.createElement('div');
+      list.className = 'services-titles-list';
+      list.id = 'servicesTitlesList';
+      wrap.appendChild(list);
+      sticky.appendChild(wrap);
+      document.body.insertBefore(sticky, document.body.firstChild);
+    }
+
+    if (!list) return;
+
+    // On garde une référence sur chaque ligne créée
+    const lines = new Array(titles.length).fill(null);
 
     function onScroll() {
-      const scrollY = window.scrollY;
+      const trigger = headerHeight + 10; // point où le titre doit se "figer"
+      const hysteresis = 40;             // marge pour éviter le clignotement
 
-      titles.forEach((h2, i) => {
-        const top = h2.getBoundingClientRect().top + scrollY;
-        const trigger = top - headerHeight - 20;  
-        const removePoint = top - headerHeight - 100;
+      titles.forEach((h2, index) => {
+        const rect = h2.getBoundingClientRect();
+        const top = rect.top;
+        const existing = lines[index];
 
-        const hasLine = active[i];
+        const shouldAdd    = top <= trigger;              // on descend
+        const shouldRemove = top > trigger + hysteresis;  // on remonte bien en dessous
 
-        if (scrollY >= trigger && !hasLine) {
+        if (shouldAdd && !existing) {
           const line = document.createElement('p');
-          line.className = 'sticky-title-line';
+          line.className = 'services-titles-item';
           line.textContent = h2.textContent.trim();
-          inner.appendChild(line);
-          active[i] = line;
-          h2.classList.add('is-cloned');
-        }
-        else if (scrollY < removePoint && hasLine) {
-          inner.removeChild(hasLine);
-          active[i] = null;
+          list.appendChild(line);
+          lines[index] = line;
+          h2.classList.add('is-cloned'); // l'original reste à sa place mais devient invisible
+        } else if (shouldRemove && existing) {
+          list.removeChild(existing);
+          lines[index] = null;
           h2.classList.remove('is-cloned');
         }
       });
 
-      sticky.style.display = inner.children.length ? "block" : "none";
+      // on cache complètement la pile s'il n'y a aucune ligne
+      sticky.style.display = list.children.length ? 'block' : 'none';
     }
 
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   })();
-  </script>
+</script>
 
 </body>
 </html>
