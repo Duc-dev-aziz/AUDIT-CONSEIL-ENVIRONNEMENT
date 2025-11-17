@@ -1145,6 +1145,11 @@ html[data-theme="dark"] .ace-field textarea:focus {
   text-align: left;
 }
 
+/* Home – centre le titre "Des solutions complètes..." */
+.home-solutions .section-title {
+  text-align: center;
+}
+
 /* PARTENAIRES */
 .home-partners {
   text-align: center;
