@@ -878,11 +878,13 @@ html[data-theme="dark"] .page-services .sticky-title-line {
   }
 }
 
-/* Ligne dégradée sous les titres de section – page Services */
+/* Ligne dégradée sous les titres de section – Services + Home */
+.page-home .page-section h2,
 .page-services .page-section h2 {
   position: relative;
 }
 
+.page-home .page-section h2::after,
 .page-services .page-section h2::after {
   content: "";
   position: absolute;
@@ -894,6 +896,7 @@ html[data-theme="dark"] .page-services .sticky-title-line {
   border-radius: 999px;
   background: linear-gradient(90deg, #1e90ff, #ff7b32);
 }
+
 
 /* Cartes services un peu plus “premium” */
 .page-services .page-card {
